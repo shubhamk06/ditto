@@ -1,0 +1,99 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+.ribbon {
+  display: block;
+  height: 100%;
+  text-align: center;
+  background: #00b8f1;
+  margin: 0;
+}
+
+.dark {
+  background: #212121;
+}
+
+.ribbon .container {
+  margin: 0 auto;
+  display: block;
+  width: 75%;
+  padding: 100px 0;
+}
+
+a, a:visited, a:active, a:link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px dotted white;
+}
+
+a:hover {
+  border-bottom: 1px solid white;
+}
+
+.bigbold {
+  padding: 35px 150px;
+  width: auto;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 3px solid white;
+  display: inline-block;
+}
+
+.button, input {
+  padding: 15px 75px;
+  width: auto;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 3px solid white !important;
+  background: white;
+  display: inline-block;
+  text-decoration: none;
+  color: #00b8f1 !important;
+}
+
+@keyframes gradualB {
+  from {background: white; color: #00b8f1;}
+  to {background: #00b8f1; color: white;}
+}
+
+.button:hover, input:focus {
+  color: white !important;
+  background: transparent;
+  animation-name: gradualB;
+  animation-duration: 1s;
+  outline: none;
+}
+
+input:placeholder {color: #00b8f1 !important;}
+input::-webkit-input-placeholder {color: #00b8f1 !important;}
+input:-moz-placeholder {color: #00b8f1 !important;}
+input::-moz-placeholder {color: #00b8f1 !important;}
+input:-ms-input-placeholder {color: #00b8f1 !important;}
+input:placeholder-shown {color: #00b8f1 !important;}
+
+hr {
+  height: 1px;
+  width: 100%
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 3px solid white;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
