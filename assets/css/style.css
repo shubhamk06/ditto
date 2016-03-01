@@ -16,8 +16,16 @@ html, body {
   margin: 0;
 }
 
+.mini {
+  height: auto;
+}
+
 .dark {
   background: #212121;
+}
+
+.ribbon:last-of-type {
+  border-bottom: none;
 }
 
 .ribbon .container {
@@ -72,6 +80,20 @@ a:hover {
   animation-name: gradualB;
   animation-duration: 1s;
   outline: none;
+}
+
+.dark .button {
+  color: #212121 !important;
+}
+
+@keyframes gradualBD {
+  from {background: white; color: #212121;}
+  to {background: #212121; color: white;}
+}
+
+.dark .button:hover, .dark input:focus {
+  animation-name: gradualBD;
+  color: white !important;
 }
 
 input:placeholder {color: #00b8f1 !important;}
