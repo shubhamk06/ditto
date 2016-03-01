@@ -27,19 +27,19 @@ class ditto {
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             . "`~0123456789!@$%^&*()-_+={}[]\\|:;'\"<,>."
             . bin2hex(openssl_random_pseudo_bytes(64)),
-            $this->opensslRand(32, 64)
+            self::opensslRand(32, 64)
           )
         ),
         1,
-        $this->opensslRand(2048, 8192)
+        self::opensslRand(2048, 8192)
       ))
       . ($strt = bin2hex(openssl_random_pseudo_bytes(strlen($str)/8)))
-      . strlen($strt)*$this->opensslRand(4, 128)
+      . strlen($strt)*self::opensslRand(4, 128)
     );
   }
 
   #Function to create a uuid v4
-  function uuid () {
+  static function uuid () {
     return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
       mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
       mt_rand( 0, 0xffff ),
