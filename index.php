@@ -9,7 +9,7 @@ require("assets/php/header.php");
     Track your low mood day by day to determine progress, effectiveness of
     practices or drugs, and find correlations and habits.
     <br><br>
-    <a class="button" href="https://ditto.zbee.me/signup">Get Started</a>
+    <a class="button" href="https://ditto.zbee.me/signup/">Get Started</a>
   </div>
 </div>
 

@@ -1,6 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require("../assets/php/header.php");
 $exception = false;
+
+if (ditto::checkSession(true) === true) ditto::redirect("/dash/");
 
 If (array_key_exists("email", $_POST)) {
   #Check if email is present
@@ -89,7 +95,7 @@ If (array_key_exists("email", $_POST)) {
     );
 
     #Move the user to a different page
-    ditto::redirect("/dash");
+    ditto::redirect("/dash/");
   }
 }
 ?>
