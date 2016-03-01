@@ -1,5 +1,6 @@
 <?php
 require("../assets/php/header.php");
+$exception = false;
 
 If (array_key_exists("email", $_POST)) {
   #Check if email is present
@@ -7,26 +8,88 @@ If (array_key_exists("email", $_POST)) {
   $check->execute([$_POST["email"]]);
   $check = $check->fetchAll(PDO::FETCH_ASSOC);
 
-  #User needs to be created
-  if (count($check) == 0) {
-    $salt = $ditto->createSalt();
-    $password = hash("sha512", $salt . $_POST["password"]);
+  try {
+    #User needs to be created
+    if (count($check) == 0) {
+      $salt = ditto::createSalt();
+      $password = hash("sha512", $salt . $_POST["password"]);
 
-    #Add user
-    $insert = $db->prepare(
-      "INSERT INTO users (id, email, password, salt, dateRegistered) "
-      . "VALUES (?, ?, ?, ?, ?)"
+      #Add user
+      $insert = $db->prepare(
+        "INSERT INTO users (id, email, password, salt, dateRegistered) "
+        . "VALUES (?, ?, ?, ?, ?)"
+      );
+      $insert->execute($report = [
+        $id = ditto::uuid(),
+        $_POST["email"],
+        $password,
+        $salt,
+        time()
+      ]);
+      $inserted = $insert->rowCount();
+
+      #Make sure the user was inserted
+      if ($inserted != 1)
+        throw new Exception(
+          "User could not be created."
+        );
+    } else {
+      #Get the user's salt, to hash the password
+      $salt = $check[0];
+      $userUUID = $salt["id"];
+      $salt = $salt["salt"];
+      $password = hash("sha512", $salt . $_POST["password"]);
+      
+      #Verify that the password was correct
+      $check = $db->prepare("SELECT * FROM users WHERE email=? AND password=?");
+      $check->execute([$_POST["email"], $password]);
+      $check = $check->fetchAll(PDO::FETCH_ASSOC);
+
+      #If the user+password cannot be found
+      if (count($check) != 1)
+        throw new Exception(
+          "Password provided was incorrect."
+        );
+    }
+  } catch (Exception $e) {
+    #Display an error
+    echo "<div class='ribbon'><div class='container'>";
+    echo $e->getMessage();
+    echo "</div></div>";
+    $exception = true;
+  }
+
+  #Log user in
+  if (!$exception) {
+    #Create user blob
+    $blob = $db->prepare(
+      "INSERT INTO blobs (id, user, date, hash) VALUES (?, ?, ?, ?)"
     );
-    $insert->execute($report = [
-      $id = $ditto->uuid(),
-      $_POST["email"],
-      $password,
-      $salt,
-      time()
-    ]);
-    $inserted = $insert->rowCount();
-  } else {
-    
+
+    #Insert blob for user login
+    $blob->execute(
+      [
+        $blobUUID = ditto::uuid(),
+        $userUUID,
+        time(),
+        $hash = hash(
+          "sha512",
+          time().$_POST["email"].$userUUID.ditto::uuid().ditto::createSalt()
+        )
+      ]
+    );
+
+    #Set cookie
+    setcookie(
+      "ditto-session",
+      $hash,
+      strtotime('+30 days'),
+      "/",
+      "zbee.me"
+    );
+
+    #Move the user to a different page
+    ditto::redirect("/dash");
   }
 }
 ?>
