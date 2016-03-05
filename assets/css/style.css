@@ -70,6 +70,11 @@ a:hover {
   color: #00b8f1 !important;
 }
 
+.button.fixed {
+  width: 265px;
+  margin-bottom: 5px;
+}
+
 @keyframes gradualB {
   from {background: white; color: #00b8f1;}
   to {background: #00b8f1; color: white;}
