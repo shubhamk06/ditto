@@ -61,8 +61,13 @@ function makePHQQ($number) {
   $formattedQuestion = str_replace("%c", $number, $formattedQuestion);
   //Fill in the current question
   $formattedQuestion = str_replace("%s", $question, $formattedQuestion);
-  //Fill in the next question integer
-  $formattedQuestion = str_replace("%n", $number+1, $formattedQuestion);
+  if ($number+1 < 10) {
+    //Fill in the next question integer
+    $formattedQuestion = str_replace("%n", $number+1, $formattedQuestion);
+  } else {
+    //Fill in the next question final
+    $formattedQuestion = str_replace("%n", "s", $formattedQuestion);
+  }
   //Return the formatted integer
   return $formattedQuestion;
 }
@@ -93,8 +98,22 @@ function makePHQ() {
 
 <?=makePHQ()?>
 
+<div class="ribbon" id="phqr">
+  <div class="container">
+    <h1 class="bigbold">Results</h1>
+    <h1 id="tagline"></h1>
+    <span id="content"></span>
+    <br><br>
+    <a class="button" href="/dash/">Retun to Dash</a>
+  </div>
+</div>
+
 <script>
 "use strict";
+
+$("html").animate({
+  "scrollTop": $("#phqr")
+}, 100);
 
 //Variable holding all of a user's answers
 var answers = [];
@@ -111,6 +130,8 @@ $("html").on("click", ".button", function (e) {
 
   //If the button clicked is a PHQ answer
   if ($(this).hasClass("phqq")) {
+    console.log("PHQ question answered");
+
     //Determine which question this is
     var question = parseInt($(this).data("question"));
     //Determine answer provided
@@ -132,8 +153,9 @@ $("html").on("click", ".button", function (e) {
 
       //Add one more question if any others have been checked
       if (anyChecked == true && answers.length != 11) {
+        console.log("Trigger sumative");
         $("#phq9").after(
-          '<div class="ribbon" id="phq10">'
+          '<div class="ribbon" id="phqs">'
             + '<div class="container">'
               + '<h1 class="bigbold">'
                 + 'Summative Question'
@@ -168,6 +190,23 @@ $("html").on("click", ".button", function (e) {
           + '</div>'
         );
         return true;
+      } else {
+        $("#phqr").remove();
+        $("#phq9").after(
+          '<div class="ribbon" id="phqs">'
+            + '<div class="container">'
+              + '<h1 class="bigbold">'
+                + 'Results'
+              + '</h1>'
+              + '<h1 id="tagline"></h1>'
+              + '<span id="content"></span>'
+              + '<br><br>'
+              + '<a class="button phqq" href="/dash/">'
+                + 'Return to Dash'
+              + '</a> '
+            + '</div>'
+          + '</div>'
+        );
       }
 
       //Finale
@@ -176,6 +215,11 @@ $("html").on("click", ".button", function (e) {
       ditto.phq9Answers = answers;
       ditto.calculate.index();
       ditto.calculate.diagnosis();
+
+      $("#tagline").text(ditto.diagnosis.split("(")[0]);
+      $("#content").text(ditto.treatment);
+
+      ditto.report();
     }
   }
 });

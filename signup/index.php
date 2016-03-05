@@ -59,7 +59,7 @@ If (array_key_exists("email", $_POST)) {
     }
   } catch (Exception $e) {
     #Display an error
-    echo "<div class='ribbon'><div class='container'>";
+    echo "<div class='ribbon dark mini'><div class='container'>";
     echo $e->getMessage();
     echo "</div></div>";
     $exception = true;

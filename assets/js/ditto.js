@@ -42,14 +42,21 @@ var ditto = {
       console.log("ditto.calculate.diagnosis()");
       var answers = ditto.phq9Answers;
 
+      var exit = function () {
+        ditto.console.log();
+        return [ditto.depressed, ditto.diagnosis, ditto.treatment];
+      }
+
       //Depression can be effectively ruled out if the index is below five 
       var index = ditto.index;
+
       if (index < 5) {
         ditto.depressed = false;
         ditto.diagnosis = "Not depressed ("
             + "PHQ-9 index too low"
           + ")";
         ditto.treatment = "None";
+        return exit();
       }
 
       //Depression can also be ruled out if depressive feelings are not reported
@@ -59,6 +66,7 @@ var ditto = {
             + "Not self-reporting depression"
           + ")";
         ditto.treatment = "None";
+        return exit();
       }
 
       //Depression can also be ruled out if symptoms are not reported
@@ -77,7 +85,8 @@ var ditto = {
         ditto.diagnosis = "Not depressed ("
             + "Not self-reporting symptoms of depression"
           + ")";
-          ditto.treatment = "None";
+        ditto.treatment = "None";
+        return exit();
       }
 
       //Depression can also be ruled out if the symptoms are not difficult
@@ -87,6 +96,7 @@ var ditto = {
             + "Not self-reporting difficulty with symptoms"
           + ")";
         ditto.treatment = "None";
+        return exit();
       }
 
       //If depression has not been ruled out, patient is depressed
@@ -110,8 +120,7 @@ var ditto = {
         ditto.treatment = "Antidepressants or psychotherapy";
       }
 
-      ditto.console.log();
-      return [ditto.depressed, ditto.diagnosis, ditto.treatment];
+      return exit();
     }
   }
 };
