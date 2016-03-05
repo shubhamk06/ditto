@@ -19,6 +19,7 @@ require_once(__DIR__ . "/loader.php");
       href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" type="text/css"
       href="https://ditto.zbee.me/assets/css/style.css">
+    <script src="https://ditto.zbee.me/assets/js/jquery-2.2.1.js"></script>
   </head>
 
   <body>
