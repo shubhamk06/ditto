@@ -143,7 +143,7 @@ $("html").on("click", ".button", function (e) {
               + '<br><br>'
               + '<b>'
                 + 'How difficult have those problems made it for you to do '
-                + 'your work, take care of things at home, or get along with'
+                + 'your work, take care of things at home, or get along with '
                 + 'other people?'
               + '</b>'
               + '<br><br>'
@@ -171,27 +171,12 @@ $("html").on("click", ".button", function (e) {
       }
 
       //Finale
-      console.log(answers);
-      console.log(calculateIndex(answers));
+      console.info(answers);
+      console.log("Running ditto javascript");
+      ditto.phq9Answers = answers;
+      ditto.calculate.index();
+      ditto.calculate.diagnosis();
     }
   }
 });
-
-//Function to calculate the PHQ-9 Index
-var calculateIndex = function (answers) {
-  //Remove summative question
-  if (answers.length == 11) {
-    delete answers[10];
-  }
-
-  var index = 0;
-
-  //Add answers together
-  answers.forEach(function(answer) {
-    index += answer;
-  });
-
-  //Return index
-  return index;
-}
 </script>

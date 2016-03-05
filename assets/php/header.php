@@ -20,6 +20,7 @@ require_once(__DIR__ . "/loader.php");
     <link rel="stylesheet" type="text/css"
       href="https://ditto.zbee.me/assets/css/style.css">
     <script src="https://ditto.zbee.me/assets/js/jquery-2.2.1.js"></script>
+    <script src="https://ditto.zbee.me/assets/js/ditto.js"></script>
   </head>
 
   <body>
