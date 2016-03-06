@@ -118,4 +118,33 @@ class ditto {
     #Return user data
     return $check[0];
   }
+
+  #Function to enter data for a user
+  public static function enterData ($dataType, $userID, $data) {
+    #Verify MySQL will work
+    global $db;
+    if (!is_object($db)) return "noPDO";
+
+    #Check that the user ID is good
+    if (strlen($userID) != 36) return "badID";
+
+    #Check that user is in database
+    $check = $db->prepare("SELECT * FROM users WHERE id=?");
+    $check->execute([$userID]);
+    $check = $check->fetchAll(PDO::FETCH_ASSOC);
+    if (count($check) != 1) return "nonexistantUser";
+    
+    $insert = $db->prepare(
+      "INSERT INTO dataPoints (id, user, type, date, data) "
+      . "VALUES (?, ?, ?, ?, ?)"
+    );
+    $insert->execute($report = [
+      $id = ditto::uuid(),
+      $userID,
+      $dataType,
+      time(),
+      json_encode($data)
+    ]);
+    $inserted = $insert->rowCount();
+  }
 }

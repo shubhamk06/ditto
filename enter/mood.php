@@ -219,7 +219,9 @@ $("html").on("click", ".button", function (e) {
       $("#tagline").text(ditto.diagnosis.split("(")[0]);
       $("#content").text(ditto.treatment);
 
-      ditto.report();
+      ditto.report(function(res) {
+        console.info(res);
+      });
     }
   }
 });

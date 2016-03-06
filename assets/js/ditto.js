@@ -60,7 +60,7 @@ var ditto = {
       }
 
       //Depression can also be ruled out if depressive feelings are not reported
-      if (answers[1] < 2 && answers[2] < 2) {
+      if (answers[1] < 2 && answers[2] < 2 && index < 5) {
         ditto.depressed = false;
         ditto.diagnosis = "Not depressed ("
             + "Not self-reporting depression"
@@ -71,16 +71,15 @@ var ditto = {
 
       //Depression can also be ruled out if symptoms are not reported
       var symptoms = 0;
-      symptoms += answers[1];
-      symptoms += answers[2];
-      symptoms += answers[3];
-      symptoms += answers[4];
-      symptoms += answers[5];
-      symptoms += answers[6];
-      symptoms += answers[7];
-      symptoms += answers[8];
-      symptoms += answers[9];
-      if (symptoms < 5) {
+      symptoms += answers[1] >= 2 ? 1 : 0;
+      symptoms += answers[2] >= 2 ? 1 : 0;
+      symptoms += answers[3] >= 2 ? 1 : 0;
+      symptoms += answers[4] >= 2 ? 1 : 0;
+      symptoms += answers[5] >= 2 ? 1 : 0;
+      symptoms += answers[6] >= 2 ? 1 : 0;
+      symptoms += answers[7] >= 2 ? 1 : 0;
+      symptoms += answers[8] >= 2 ? 1 : 0;
+      if (symptoms < 5 || answers[9] < 1) {
         ditto.depressed = false;
         ditto.diagnosis = "Not depressed ("
             + "Not self-reporting symptoms of depression"
@@ -122,5 +121,23 @@ var ditto = {
 
       return exit();
     }
+  },
+  //Method for reporting ditto results
+  "report": function (callback) {
+    console.log("ditto.report()");
+    $.ajax({
+      "url": "https://ditto.zbee.me/enter/report.php",
+      "method": "POST",
+      "data": {
+        "index": ditto.index,
+        "depressed": ditto.depressed,
+        "diagnosis": ditto.diagnosis,
+        "phq9Answers": ditto.phq9Answers,
+        "treatment": ditto.treatment
+      }
+    }).done(function(res) {
+      callback(res);
+    });
+    ditto.console.log();
   }
 };
