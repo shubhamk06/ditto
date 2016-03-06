@@ -134,6 +134,7 @@ class ditto {
     $check = $check->fetchAll(PDO::FETCH_ASSOC);
     if (count($check) != 1) return "nonexistantUser";
     
+    #Insert into database
     $insert = $db->prepare(
       "INSERT INTO dataPoints (id, user, type, date, data) "
       . "VALUES (?, ?, ?, ?, ?)"
@@ -145,6 +146,69 @@ class ditto {
       time(),
       json_encode($data)
     ]);
+
+    #Check if insert worked
     $inserted = $insert->rowCount();
+    if ($inserted !== 1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  #Function to get data points
+  public static function getDataPoints (
+    $userID, $dataType = false, $timeFrame = false
+  ) {
+    #Verify MySQL will work
+    global $db;
+    if (!is_object($db)) return "noPDO";
+
+    #Check that the user ID is good
+    if (strlen($userID) != 36) return "badID";
+
+    #Check that user is in database
+    $check = $db->prepare("SELECT * FROM users WHERE id=?");
+    $check->execute([$userID]);
+    $check = $check->fetchAll(PDO::FETCH_ASSOC);
+    if (count($check) != 1) return "nonexistantUser";
+
+    #Set up query
+    $query = "SELECT * from dataPoints where user=?";
+    $input = [$userID];
+
+    #Search for specific data type if provided
+    if ($dataType !== false && $dataType !== null) {
+      if (!is_numeric($dataType)) {
+        return "badDataType";
+      }
+
+      $query .= " AND `type`=?";
+      array_push($input, $dataType);
+    }
+
+    #Limit time frame if provided
+    if ($timeFrame !== false && is_array($timeFrame)) {
+      if (is_array($timeFrame)) {
+        $query .= " AND `date`>? AND `date`<?";
+        array_push($input, $timeFrame[0]);
+        array_push($input, $timeFrame[1]);
+      }
+    } elseif (is_numeric($timeFrame)) {
+      $query .= " AND `date`>?";
+      array_push($input, $timeFrame);
+    }
+    
+    #Perform query
+    $get = $db->prepare($query);
+    $get->execute($input);
+
+    #Check if query worked
+    $found = $get->rowCount();
+    if ($found < 1) {
+      return "noDataPoints";
+    } else {
+      return $get->fetchAll(PDO::FETCH_ASSOC);
+    }
   }
 }

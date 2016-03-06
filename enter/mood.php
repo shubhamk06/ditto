@@ -111,10 +111,6 @@ function makePHQ() {
 <script>
 "use strict";
 
-$("html").animate({
-  "scrollTop": $("#phqr")
-}, 100);
-
 //Variable holding all of a user's answers
 var answers = [];
 
