@@ -103,7 +103,7 @@ var drawChart = function() {
   }
 }
 
-var options = {
+var chartOptions = {
   backgroundColor: "#00b8f1",
   chart: {
     title: '',

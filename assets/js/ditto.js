@@ -2,16 +2,16 @@
 
 //ditto library
 //var/func | name                | return  | comment
-//var      | index               | integer | total of PHQ-9 questions
-//var      | depressed           | boolean | if the human is depressed
-//var      | diagnosis           | string  | the complete diagonis of human
-//var      | phq9Answers         | array   | the answers self-reported by human
-//var      | treatment           | string  | Pfizer's suggest treatment
-//var      | environment         | object  | information about environment
-//var      | calculate           | void    | object to hold methods
+//variable | index               | integer | total of PHQ-9 questions
+//variable | depressed           | boolean | if the human is depressed
+//variable | diagnosis           | string  | the complete diagonis of human
+//variable | phq9Answers         | array   | the answers self-reported by human
+//variable | treatment           | string  | Pfizer's suggest treatment
+//variable | environment         | object  | information about environment
+//variable | calculate           | void    | object to hold methods
 //function | calculate.index     | integer | method to calculate index
 //function | calculate.diagnosis | array   | method to calculate diagnosis
-//var      | analyze             | void    | object to hold methods
+//variable | analyze             | void    | object to hold methods
 //function | analyze.battery     | void    | method to run all analyses
 //function | analyze.environment | object  | method to analze the environment
 //function | report              | void    | method to report findings to server

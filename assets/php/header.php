@@ -35,6 +35,7 @@ require_once(__DIR__ . "/loader.php");
       href="https://ditto.zbee.me/assets/css/style.css">
 
     <script src="https://ditto.zbee.me/assets/js/ditto.js"></script>
+    <script src="https://ditto.zbee.me/assets/js/jquery-2.2.1.js"></script>
   </head>
 
   <body>
