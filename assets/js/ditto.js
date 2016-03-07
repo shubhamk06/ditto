@@ -1,10 +1,29 @@
-//Ditto Library
+"use strict";
+
+//ditto library
+//var/func | name                | return  | comment
+//var      | index               | integer | total of PHQ-9 questions
+//var      | depressed           | boolean | if the human is depressed
+//var      | diagnosis           | string  | the complete diagonis of human
+//var      | phq9Answers         | array   | the answers self-reported by human
+//var      | treatment           | string  | Pfizer's suggest treatment
+//var      | environment         | object  | information about environment
+//var      | calculate           | void    | object to hold methods
+//function | calculate.index     | integer | method to calculate index
+//function | calculate.diagnosis | array   | method to calculate diagnosis
+//var      | analyze             | void    | object to hold methods
+//function | analyze.battery     | void    | method to run all analyses
+//function | analyze.environment | object  | method to analze the environment
+//function | report              | void    | method to report findings to server
+
+//ditto library
 var ditto = {
-  "index": null,
-  "depressed": null,
-  "diagnosis": null,
+  "index"      : null,
+  "depressed"  : null,
+  "diagnosis"  : null,
   "phq9Answers": null,
-  "treatment": null,
+  "treatment"  : null,
+  "environment": null,
   //Methods for outputting data to the console
   "console": {
     //Method for logging data to the console
@@ -21,7 +40,7 @@ var ditto = {
       var answers = ditto.phq9Answers;
 
       //Remove summative question
-      if (answers.length == 11) {
+      if (answers.length === 11) {
         delete answers[10];
       }
 
@@ -45,7 +64,7 @@ var ditto = {
       var exit = function () {
         ditto.console.log();
         return [ditto.depressed, ditto.diagnosis, ditto.treatment];
-      }
+      };
 
       //Depression can be effectively ruled out if the index is below five 
       var index = ditto.index;
@@ -115,11 +134,48 @@ var ditto = {
         ditto.treatment = "Antidepressants or psychotherapy";
       } else {
         ditto.depressed = true;
-        ditto.diagnosis = "Severe major depression"
+        ditto.diagnosis = "Severe major depression";
         ditto.treatment = "Antidepressants or psychotherapy";
       }
 
+      //Return diagnosis
       return exit();
+    }
+  },
+  //Methods for providing additional data on a user
+  "analyze": {
+    "battery": function () {
+      console.log("ditto.analyze.battery()");
+
+      ditto.analyze.currentEnvironment();
+    },
+    "environment": function () {
+      console.log("ditto.analyze.environment()");
+
+      var environment = {
+        "time"    : null,
+        "day"     : null,
+        "timezone": null
+      };
+
+      //Local time of day
+      var pad = function(num, size) {
+        var s = num + "";
+        while (s.length < size) s = "0" + s;
+        return s;
+      }
+      var h = pad((new Date).getHours(), 2);
+      var m = pad((new Date).getMinutes(), 2);
+      data.time = parseInt(h + "" + m);
+
+      //Local day of week
+      data.day = (new Date).getDay();
+
+      //Local timezone
+      var timezone = new Date();
+      data.timezone = timezone.getTimezoneOffset() / 60;
+
+      ditto.console.log();
     }
   },
   //Method for reporting ditto results
