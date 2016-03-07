@@ -56,8 +56,7 @@ $dataPointsPerm = [
     ?>
     <div id="moodChart"></div>
     <script>
-    function drawChart() {
-
+    var drawMood = function() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Day');
       data.addColumn('number', 'Mood');
@@ -73,35 +72,11 @@ $dataPointsPerm = [
         ?>
       ]);
 
-      var options = {
-        backgroundColor: "#00b8f1",
-        chart: {
-          title: '',
-          subtitle: ''
-        },
-        hAxis: {
-          title: 'Time',
-          minorGridlines: {color: "white"},
-          titleTextStyle: {color: "white"},
-          textStyle: {color: "white"},
-          baselineColor: "white"
-        },
-        vAxis: {
-          title: 'Index',
-          titleTextStyle: {color: "white"},
-          textStyle: {color: "white"},
-          baselineColor: "white"
-        },
-        colors: ['white', 'white', 'white'],
-        pointSize: 7,
-        pointShape: "circle",
-        legend: {textStyle: {color: "white"}},
-        height: 500
-      };
+      var chart = new google.visualization.LineChart(
+        document.getElementById('moodChart')
+      );
 
-      var chart = new google.visualization.LineChart(document.getElementById('moodChart'));
-
-      chart.draw(data, options);
+      chart.draw(data, chartOptions);
     }
     </script>
     <?php else: ?>
@@ -114,6 +89,46 @@ $dataPointsPerm = [
     <?php endif; ?>
   </div>
 </div>
+
+<script>
+var drawChart = function() {
+  if (typeof drawMood == "function") { 
+    drawMood();
+  }
+  if (typeof drawSleep == "function") { 
+    drawSleep();
+  }
+  if (typeof drawFood == "function") { 
+    drawFood();
+  }
+}
+
+var options = {
+  backgroundColor: "#00b8f1",
+  chart: {
+    title: '',
+    subtitle: ''
+  },
+  hAxis: {
+    title: 'Time',
+    minorGridlines: {color: "white"},
+    titleTextStyle: {color: "white"},
+    textStyle: {color: "white"},
+    baselineColor: "white"
+  },
+  vAxis: {
+    title: 'Index',
+    titleTextStyle: {color: "white"},
+    textStyle: {color: "white"},
+    baselineColor: "white"
+  },
+  colors: ['white', 'white', 'white'],
+  pointSize: 7,
+  pointShape: "circle",
+  legend: {textStyle: {color: "white"}},
+  height: 500
+};
+</script>
 
 <?php
 require("../assets/php/footer.php");
