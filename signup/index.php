@@ -26,7 +26,7 @@ If (array_key_exists("email", $_POST)) {
         . "VALUES (?, ?, ?, ?, ?)"
       );
       $insert->execute($report = [
-        $id = ditto::uuid(),
+        $userUUID = ditto::uuid(),
         $_POST["email"],
         $password,
         $salt,

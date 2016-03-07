@@ -101,7 +101,7 @@ var drawChart = function() {
   if (typeof drawFood == "function") { 
     drawFood();
   }
-}
+};
 
 var chartOptions = {
   backgroundColor: "#00b8f1",

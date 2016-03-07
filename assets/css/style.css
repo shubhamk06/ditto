@@ -102,16 +102,14 @@ a:hover {
   color: white !important;
 }
 
-input:placeholder {color: #00b8f1 !important;}
 input::-webkit-input-placeholder {color: #00b8f1 !important;}
 input:-moz-placeholder {color: #00b8f1 !important;}
 input::-moz-placeholder {color: #00b8f1 !important;}
 input:-ms-input-placeholder {color: #00b8f1 !important;}
-input:placeholder-shown {color: #00b8f1 !important;}
 
 hr {
   height: 1px;
-  width: 100%
+  width: 100%;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
