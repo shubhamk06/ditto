@@ -11,6 +11,7 @@
 //variable | calculate           | void    | object to hold methods
 //function | calculate.index     | integer | method to calculate index
 //function | calculate.diagnosis | array   | method to calculate diagnosis
+//function | calculate.quality   | array   | method to calculate sleep quality
 //variable | analyze             | void    | object to hold methods
 //function | analyze.battery     | void    | method to run all analyses
 //function | analyze.environment | object  | method to analyze the environment
@@ -159,23 +160,14 @@ ditto = {
         }
         return s;
       };
-      var h     = pad(
-        (
-          new Date
-        ).getHours(), 2
-      );
-      var m     = pad(
-        (
-          new Date
-        ).getMinutes(), 2
-      );
+      var h     = pad(Date.getHours(), 2);
+      var m     = pad(Date.getMinutes(), 2);
       data.time = parseInt(h + "" + m);
 
       //Local day of week
-      data.day =
-        (
-          new Date
-        ).getDay();
+      data.day = (
+        new Date
+      ).getDay();
 
       //Local timezone
       var timezone  = new Date();

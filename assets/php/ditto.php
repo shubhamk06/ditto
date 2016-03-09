@@ -30,6 +30,7 @@ class ditto {
 
   /**
    * Function leveraging openssl to create a random 128-char string
+   *
    * @return string
    */
   public static function createSalt () {
@@ -55,6 +56,7 @@ class ditto {
 
   /**
    * Function to create a uuid v4
+   *
    * @return string
    */
   static function uuid () {
@@ -187,9 +189,9 @@ class ditto {
   /**
    * Function to enter data for a user
    *
-   * @param $dataType
-   * @param $userID
-   * @param $data
+   * @param integer $dataType
+   * @param string  $userID
+   * @param array   $data
    *
    * @return bool|string
    */
@@ -212,35 +214,42 @@ class ditto {
     if (count($check) != 1) {
       return "nonexistantUser";
     }
+    #Set up data to report
+    $report = [
+      $id = ditto::uuid(),
+      $userID,
+      $dataType,
+      time(),
+      json_encode($data)
+    ];
+
+    #Check that there's not a data point with similar data input recently
+    $check = $db->prepare(
+      "SELECT * FROM dataPoints WHERE user=? AND date>? AND data=?"
+    );
+    $check->execute([$userID, time() - 60 * 59, $report[4]]);
+    $check = $check->fetchAll(PDO::FETCH_ASSOC);
+    if (count($check) > 0) {
+      return "tooRecentDataPoint";
+    }
 
     #Insert into database
     $insert = $db->prepare(
       "INSERT INTO dataPoints (id, user, type, date, data) "
       . "VALUES (?, ?, ?, ?, ?)"
     );
-    $insert->execute(
-      $report = [
-        $id = ditto::uuid(),
-        $userID,
-        $dataType,
-        time(),
-        json_encode($data)
-      ]
-    );
+    $insert->execute($report);
 
     #Check if insert worked
     $inserted = $insert->rowCount();
-    if ($inserted !== 1) {
-      return false;
-    } else {
-      return true;
-    }
+
+    return $inserted !== 1 ? false : true;
   }
 
   /**
    * Function to get data points
    *
-   * @param                    $userID
+   * @param string             $userID
    * @param integer|bool       $dataType
    * @param array|integer|bool $timeFrame
    *
@@ -297,7 +306,7 @@ class ditto {
     }
 
     #Perform query
-    $get = $db->prepare($query);
+    $get = $db->prepare($query . " ORDER BY date DESC");
     $get->execute($input);
 
     #Check if query worked
