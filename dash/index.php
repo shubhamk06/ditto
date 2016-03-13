@@ -66,7 +66,7 @@ $dataPointsPerm = [
               [
                 <?php
                 foreach ($moodPoints as $moodPoint) {
-                  $date    = date("Y-m-d", $moodPoint["date"]);
+                  $date    = date("Y-m-d\TH:i", $moodPoint["date"]);
                   $quality = json_decode($moodPoint["data"]);
                   $quality = $quality[0];
                   echo "[new Date('$date'), $quality],\n";
@@ -104,7 +104,7 @@ $dataPointsPerm = [
         <div id="sleepChart"></div>
         <script>
           var drawSleep = function () {
-            var data = new google.visualization.DataTable();
+            var data = ne`w google.visualization.DataTable();
             data.addColumn('date', 'Day');
             data.addColumn('number', 'Sleep');
 
@@ -112,7 +112,7 @@ $dataPointsPerm = [
               [
                 <?php
                 foreach ($sleepPoints as $sleepPoint) {
-                  $date    = date("Y-m-d", $sleepPoint["date"]);
+                  $date    = date("Y-m-d\TH:i", $sleepPoint["date"]);
                   $quality = json_decode($sleepPoint["data"]);
                   $quality = $quality[0];
                   echo "[new Date('$date'), $quality],\n";
