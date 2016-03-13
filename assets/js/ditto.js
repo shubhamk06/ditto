@@ -1,41 +1,47 @@
 "use strict";
 
 //ditto library
-//var/func | name                | return  | comment
-//variable | index               | integer | total of PHQ-9 questions
-//variable | depressed           | boolean | if the human is depressed
-//variable | diagnosis           | string  | the complete diagnosis of human
-//variable | phq9Answers         | array   | the answers self-reported by human
-//variable | treatment           | string  | Pfizer's suggest treatment
-//variable | environment         | object  | information about environment
-//variable | calculate           | void    | object to hold methods
-//function | calculate.index     | integer | method to calculate index
-//function | calculate.diagnosis | array   | method to calculate diagnosis
-//function | calculate.quality   | array   | method to calculate sleep quality
-//variable | analyze             | void    | object to hold methods
-//function | analyze.battery     | void    | method to run all analyses
-//function | analyze.environment | object  | method to analyze the environment
-//function | report              | void    | method to report findings to server
+//name                      | return  | comment
+//depressionIndex           | integer | total of PHQ-9 questions
+//depressed                 | boolean | if the human is depressed
+//diagnosis                 | string  | the complete diagnosis of human
+//phq9Answers               | array   | the answers self-reported by human
+//sleepAnswers              | array   | the answers self-reported by human
+//sleepQuality              | integer | sleepQuality of sleep
+//treatment                 | string  | Pfizer's suggest treatment
+//environment               | object  | information about environment
+//calculate                 | void    | object to hold methods
+//calculate.depressionIndex | integer | method to calculate depressionIndex
+//calculate.diagnosis       | array   | method to calculate diagnosis
+//calculate.sleepQuality    | array   | method to calculate sleep
+//sleepQuality analyze      | void    | object to hold methods
+//analyze.battery           | void    | method to run all analyses
+//analyze.environment       | object  | method to analyze the environment
+//report                    | void    | object to hold methods report.mood
+//report.mood               | void    | method to report mood to server
+//report.sleep              | void    | method to report sleep to server
 
 var ditto;
 ditto = {
-  "index"      : null,
-  "depressed"  : null,
-  "diagnosis"  : null,
-  "phq9Answers": null,
-  "treatment"  : null,
-  "environment": null, //Methods for outputting data to the console
-  "console"    : {
+  "depressionIndex": null,
+  "depressed"      : null,
+  "diagnosis"      : null,
+  "phq9Answers"    : null,
+  "sleepAnswers"   : null,
+  "sleepQuality"   : null,
+  "treatment"      : null,
+  "environment"    : null,
+  "console"        : {
     //Method for logging data to the console
     "log": function () {
       console.log("ditto.console.log()");
       console.info(ditto);
     }
   }, //Methods for calculating results
-  "calculate"  : {
+  "calculate"      : {
     //Function to calculate the PHQ-9 Index
-    "index"    : function () {
-      console.log("ditto.calculate.index()");
+    "depressionIndex": function () {
+      console.log("ditto.calculate.depressionIndex()");
       var answers = ditto.phq9Answers;
 
       //Remove summative question
@@ -52,13 +58,13 @@ ditto = {
         }
       );
 
-      //Return index
-      ditto.index = index;
+      //Return depressionIndex
+      ditto.depressionIndex = index;
       ditto.console.log();
       return index;
     }, //Function to diagnose based off of Pfizer's PHQ-9 stable resource
        // toolkit
-    "diagnosis": function () {
+    "diagnosis"      : function () {
       console.log("ditto.calculate.diagnosis()");
       var answers = ditto.phq9Answers;
 
@@ -67,8 +73,9 @@ ditto = {
         return [ditto.depressed, ditto.diagnosis, ditto.treatment];
       };
 
-      //Depression can be effectively ruled out if the index is below five
-      var index = ditto.index;
+      //Depression can be effectively ruled out if the depressionIndex is below
+      // five
+      var index = ditto.depressionIndex;
 
       if (index < 5) {
         ditto.depressed = false;
@@ -138,9 +145,24 @@ ditto = {
 
       //Return diagnosis
       return exit();
+    }, "sleepQuality": function () {
+      console.log("ditto.calculate.sleepQuality()");
+      var quality = 0;
+
+      //Determine quality based off of answers
+      quality += ditto.sleepAnswers["length"];
+      quality += ditto.sleepAnswers["quality"];
+      quality += ditto.sleepAnswers["rest"];
+      quality -= ditto.sleepAnswers["meal"];
+      quality -= ditto.sleepAnswers["aidAlcohol"];
+
+      //Return the sleepQuality
+      ditto.sleepQuality = quality;
+      ditto.console.log();
+      return quality;
     }
   }, //Methods for providing additional data on a user
-  "analyze"    : {
+  "analyze"        : {
     "battery"       : function () {
       console.log("ditto.analyze.battery()");
 
@@ -176,25 +198,41 @@ ditto = {
       ditto.console.log();
     }
   }, //Method for reporting ditto results
-  "report"     : function (callback) {
-    console.log("ditto.report()");
-    $.ajax(
-      {
-        "url"   : "https://ditto.zbee.me/enter/report.php",
-        "method": "POST",
-        "data"  : {
-          "index"      : ditto.index,
-          "depressed"  : ditto.depressed,
-          "diagnosis"  : ditto.diagnosis,
-          "phq9Answers": ditto.phq9Answers,
-          "treatment"  : ditto.treatment
+  "report"         : {
+    "ajax"    : function (callback, data) {
+      console.log("ditto.report.ajax()");
+      $.ajax(
+        {
+          "url"   : "https://ditto.zbee.me/enter/report.php",
+          "method": "POST",
+          "data"  : data
         }
-      }
-    ).done(
-      function (res) {
-        callback(res);
-      }
-    );
-    ditto.console.log();
+      ).done(
+        function (res) {
+          callback(res);
+        }
+      );
+      ditto.console.log();
+    }, "mood" : function (callback) {
+      console.log("ditto.report.mood()");
+      ditto.report.ajax(
+        callback, {
+          "depressionIndex": ditto.depressionIndex,
+          "depressed"      : ditto.depressed,
+          "diagnosis"      : ditto.diagnosis,
+          "phq9Answers"    : ditto.phq9Answers,
+          "treatment"      : ditto.treatment
+        }
+      );
+      ditto.console.log();
+    }, "sleep": function (callback) {
+      console.log("ditto.report.sleep()");
+      ditto.report.ajax(
+        callback, {
+          "sleepQuality": ditto.sleepQuality, "sleepAnswers": ditto.sleepAnswers
+        }
+      );
+      ditto.console.log();
+    }
   }
 };
