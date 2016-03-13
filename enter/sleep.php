@@ -3,6 +3,10 @@
     <h1 class="bigbold">Log Sleep</h1>
     <br><br>
     From here you can log your sleep for last night.
+    <br>
+    Sleep is massively important to your mental health as without it brain
+    functionality is altered. Additionally, it affects physical health including
+    hormonal balance.
     <br><br>
     Ready to begin monitoring your sleep?
     <br><br>
@@ -154,7 +158,6 @@
     console.log("Running ditto javascript");
     ditto.sleepAnswers = answers;
     var score          = ditto.calculate.sleepQuality();
-    ditto.report.sleep();
 
     $("#tagline").text("Score: " + score);
     $("#content").text(
@@ -170,7 +173,6 @@
 
   $("html").on(
     "click", ".fixed", function () {
-      console.log("Answer] " + JSON.stringify($(this).data()));
       var $this                       = $(this);
       answers[$this.data("question")] = $this.data("answer");
 

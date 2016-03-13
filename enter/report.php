@@ -25,4 +25,10 @@ if (array_key_exists("phq9Answers", $_POST)) {
     $user["id"],
     [$_POST["sleepQuality"], $_POST["sleepAnswers"]]
   );
+} elseif (array_key_exists("hei", $_POST)) {
+  ditto::enterData(
+    2,
+    $user["id"],
+    [$_POST["hei"], $_POST["foodAnswers"]]
+  );
 }

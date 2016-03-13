@@ -104,7 +104,7 @@ $dataPointsPerm = [
         <div id="sleepChart"></div>
         <script>
           var drawSleep = function () {
-            var data = ne`w google.visualization.DataTable();
+            var data = new google.visualization.DataTable();
             data.addColumn('date', 'Day');
             data.addColumn('number', 'Sleep');
 
