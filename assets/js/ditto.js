@@ -162,18 +162,25 @@ ditto = {
       quality -= ditto.sleepAnswers["meal"];
       quality -= ditto.sleepAnswers["aidAlcohol"];
 
+      //Convert sleep answers to an array
+      ditto.sleepAnswers = Object.keys(ditto.sleepAnswers)
+        .map(
+          function (key) {
+            return ditto.sleepAnswers[key]
+          }
+        );
+
       //Return the sleepQuality
       ditto.sleepQuality = quality;
       ditto.console.log();
       return quality;
     }, "healthyEatingIndex": function () {
       console.log("ditto.calculate.healthyEatingIndex()");
-      var components = ditto.hei2010Answers, hei = 0, extras = {}, highProteins = false;
+      var components = ditto.hei2010Answers, extras = {}, highProteins = false;
 
       //Function for deducing score for component
       function quarterToScore(answer, score) {
         var oScore = score;
-        score      = score / 4;
         score      = [
           1 / 8, 3 / 8, 5 / 8, 7 / 8
         ];
@@ -215,7 +222,7 @@ ditto = {
       //Determine base indexes
       Object.keys(components).forEach(
         function (key) {
-          var score       = componentScores[key], //Fetch the score for this component
+          var score       = componentScores[key], //Fetch the score
               value       = components[key], //Fetch the provided value
               actualValue = value; //Set up for possible modification later
           if (key in componentFinals) {
@@ -253,8 +260,8 @@ ditto = {
       }
       delete extras["beansPeas"];
       //Determine fatty acids value
-      var acids = 0, acidsValue = 0;
-      acids     = (
+      var acidsValue = 0;
+      var acids      = (
         extras["poly"] + extras["mono"]
       );
       acids /= extras["sat"];
@@ -269,6 +276,7 @@ ditto = {
       }
       componentFinals["acids"] = quarterToScore(acidsValue, 10);
 
+      //Make array of the scores
       ditto.hei2010Answers = Object.keys(componentFinals)
         .map(
           function (key) {
@@ -287,9 +295,9 @@ ditto = {
         return sum;
       }
 
-      hei = sum(componentFinals) //Add all components
-      hei = hei > 20 ? hei - 20 : 0; //Set the lower bound
-      hei = hei / 36 * 100 | 0; //Set the upper bound and convert to 1-100
+      var hei = sum(componentFinals); //Add all components
+      hei     = hei > 20 ? hei - 20 : 0; //Set the lower bound
+      hei     = hei / 36 * 100 | 0; //Set the upper bound and convert to 1-100
 
       //Return the healthyEatingIndex
       ditto.healthyEatingIndex = hei;

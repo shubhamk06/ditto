@@ -4,7 +4,7 @@ require("../assets/php/header.php");
 $user = ditto::requireLogin();
 $user = ditto::getUser($user);
 
-$dataPoints = ditto::getDataPoints($user["id"], null, time() - 3600 * 6);
+$dataPoints = ditto::getDataPoints($user["id"], null, time() - 3600 * 12);
 
 $moodPoints  = [];
 $sleepPoints = [];
