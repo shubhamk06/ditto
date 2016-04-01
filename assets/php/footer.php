@@ -32,5 +32,19 @@
         Created in 2016, public domain.
       </div>
     </div>
+
+    <script>
+      var drawChart = function () {
+        if (typeof drawMood == "function") {
+          drawMood();
+        }
+        if (typeof drawSleep == "function") {
+          drawSleep();
+        }
+        if (typeof drawFood == "function") {
+          drawFood();
+        }
+      };
+    </script>
   </body>
 </html>
