@@ -10,7 +10,7 @@ html, body {
 
 .ribbon {
   display: block;
-  height: 100%;
+    min-height: 100%;
   text-align: center;
   background: #00b8f1;
   margin: 0;
