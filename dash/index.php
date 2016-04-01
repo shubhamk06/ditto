@@ -53,7 +53,7 @@ $dataPointsPerm = [
       <?php
       $moodPoints =
         ditto::getDataPoints($user["id"], 0, time() - 3600 * 24 * 30);
-      if (count($moodPoints) > 3):
+      if (count($moodPoints) >= 3):
         ?>
         <div id="moodChart"></div>
         <script>
@@ -99,7 +99,7 @@ $dataPointsPerm = [
       <?php
       $sleepPoints =
         ditto::getDataPoints($user["id"], 1, time() - 3600 * 24 * 30);
-      if (count($sleepPoints) > 3):
+      if (count($sleepPoints) >= 3):
         ?>
         <div id="sleepChart"></div>
         <script>
@@ -139,19 +139,53 @@ $dataPointsPerm = [
     </div>
   </div>
 
-  <script>
-    var drawChart = function () {
-      if (typeof drawMood == "function") {
-        drawMood();
-      }
-      if (typeof drawSleep == "function") {
-        drawSleep();
-      }
-      if (typeof drawFood == "function") {
-        drawFood();
-      }
-    };
+  <div class="ribbon" id="food">
+    <div class="container">
+      <h1 class="bigbold">Food</h1>
+      <?php
+      $foodPoints =
+        ditto::getDataPoints($user["id"], 2, time() - 3600 * 24 * 30);
+      if (count($foodPoints) >= 3):
+        ?>
+        <div id="foodChart"></div>
+        <script>
+          var drawFood = function () {
+            var data = new google.visualization.DataTable();
+            data.addColumn('date', 'Day');
+            data.addColumn('number', 'Food');
 
+            data.addRows(
+              [
+                <?php
+                foreach ($foodPoints as $foodPoint) {
+                  $date    = date("Y-m-d\TH:i", $foodPoint["date"]);
+                  $quality = json_decode($foodPoint["data"]);
+                  $quality = $quality[0];
+                  echo "[new Date('$date'), $quality],\n";
+                }
+                ?>
+              ]
+            );
+
+            var chart = new google.visualization.LineChart(
+              document.getElementById('foodChart')
+            );
+
+            chart.draw(data, chartOptions);
+          }
+        </script>
+      <?php else: ?>
+        <h1>You Don't Yet Have Enough Data To Visualize</h1>
+      <?php endif; ?>
+      <?php if (count($dataPointsPerm["food"]) !== 0): ?>
+        Great job on remembering to log your food today!
+      <?php else: ?>
+        <a class="button" href="/enter/food/">Log Food</a>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <script>
     var chartOptions = {
       backgroundColor: "#00b8f1",
       chart          : {
