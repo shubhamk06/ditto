@@ -1,0 +1,295 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "https://ditto.zbee.me/assets/json/forms/",
+  "description": "Forms JSON files contain all of the questions, metadata, and logic for an index questionnaire for ditto.",
+  "type": "object",
+  "properties": {
+    "form": {
+      "description": "Information about the form.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Lower-case names of form.",
+          "type": "object",
+          "properties": {
+            "short": {
+              "description": "Lower-case abbreviated form name.",
+              "type": "string"
+            },
+            "long": {
+              "description": "Lower-case non-abbreviated, full form name.",
+              "type": "string"
+            }
+          }
+        },
+        "capitalName": {
+          "description": "Capitalized names of form.",
+          "type": "object",
+          "properties": {
+            "short": {
+              "description": "Capitalized abbreviated form name.",
+              "type": "string"
+            },
+            "long": {
+              "description": "Capitalized non-abbreviated, full form name.",
+              "type": "string"
+            }
+          }
+        },
+        "information": {
+          "description": "",
+          "type": "object",
+          "properties": {
+            "url": {
+              "description": "URL to information about the form from an official source.",
+              "type": "string"
+            },
+            "form": {
+              "description": "URL to form itself, from an official source.",
+              "type": "string"
+            }
+          }
+        },
+        "for": {
+          "description": "What the form is used for.",
+          "type": "string"
+        },
+        "questions": {
+          "description": "Quantity of questions the form has.",
+          "type": "integer"
+        },
+        "indexRange": {
+          "description": "Range of the produced index.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "number"
+          }
+        },
+        "about": {
+          "description": "Description at the top of the form.",
+          "type": "string"
+        }
+      }
+    },
+    "questions": {
+      "description": "The list of questions on the form.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "description": "Order question comes in; primarily to identify concluding questions.",
+            "type": ["number", "string"]
+          },
+          "id": {
+            "description": "ID that the question will be given.",
+            "type": "string"
+          },
+          "qualifier": {
+            "description": "The camelCase name of the question.",
+            "type": "string"
+          },
+          "question": {
+            "description": "Full question text.",
+            "type": "string"
+          },
+          "information": {
+            "description": "Any additional information the question needs.",
+            "type": ["string", "null"]
+          },
+          "recommended": {
+            "description": "Any recommended answer the question has.",
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "answers": {
+      "description": "Labels and values for the answer buttons.",
+      "type": "object",
+      "properties": {
+        "1": {
+          "description": "The first answer button.",
+          "type": "object",
+          "properties": {
+            "label": {
+              "description": "The label for the button.",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value for the button.",
+              "type": "number"
+            }
+          }
+        },
+        "2": {
+          "description": "The second answer button.",
+          "type": "object",
+          "properties": {
+            "label": {
+              "description": "The label for the button.",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value for the button.",
+              "type": "number"
+            }
+          }
+        },
+        "3": {
+          "description": "The third answer button.",
+          "type": "object",
+          "properties": {
+            "label": {
+              "description": "The label for the button.",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value for the button.",
+              "type": "number"
+            }
+          }
+        },
+        "4": {
+          "description": "The fourth answer button.",
+          "type": "object",
+          "properties": {
+            "label": {
+              "description": "The label for the button.",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value for the button.",
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "logic": {
+      "description": "Any logic necessary to successfully calculate the index.",
+      "type": ["array", "null"],
+      "items": {
+        "description": "A logic step",
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "The provided description of the logic step; primarily for documentation.",
+            "type": ["string", "null"]
+          },
+          "type": {
+            "description": "The type of the logic step.",
+            "type": "string",
+            "enum": ["if"]
+          },
+          "statement": {
+            "description": "The conditions, and results of the logic step.",
+            "type": "object",
+            "properties": {
+              "conditions": {
+                "description": "The conditions the logic step's statement must fulfill.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "description": "Variable that is being checked.",
+                      "type": "string"
+                    },
+                    "is": {
+                      "description": "Comparison operator",
+                      "type": "string",
+                      "enum": ["==", "===", ">", "<", "<=", ">="]
+                    },
+                    "value": {
+                      "description": "Variable or value compared against.",
+                      "type": ["string", "number", "boolean"]
+                    },
+                    "join": {
+                      "description": "Method used to join this condition to the previous.",
+                      "type": ["string", "null"],
+                      "enum": ["&&", "||", "and", "or"]
+                    }
+                  }
+                }
+              },
+              "then": {
+                "description": "Operations to be performed if the conditions are met.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "description": "Variable that is being modified.",
+                      "type": "string"
+                    },
+                    "operation": {
+                      "description": "Operation to perform on variable.",
+                      "type": "string",
+                      "enum": [
+                        "+",
+                        "-",
+                        "++",
+                        "--",
+                        "+=",
+                        ".",
+                        "/",
+                        "/=",
+                        "*",
+                        "*=",
+                        "-=",
+                        "@@"
+                      ]
+                    },
+                    "value": {
+                      "description": "Variable or value to modify variable by.",
+                      "type": ["string", "number"]
+                    }
+                  }
+                }
+              },
+              "else": {
+                "description": "Operations to be performed if the conditions aren't met.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "description": "Variable that is being modified.",
+                      "type": "string"
+                    },
+                    "operation": {
+                      "description": "Operation to perform on variable.",
+                      "type": "string",
+                      "enum": [
+                        "+",
+                        "-",
+                        "++",
+                        "--",
+                        "+=",
+                        ".",
+                        "/",
+                        "/=",
+                        "*",
+                        "*=",
+                        "-=",
+                        "@@"
+                      ]
+                    },
+                    "value": {
+                      "description": "Variable or value to modify variable by.",
+                      "type": ["string", "number"]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,2 +1,2 @@
-*.json
 _secret_*
+.idea/
