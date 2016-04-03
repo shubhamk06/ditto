@@ -81,6 +81,7 @@ function makePHQQ ($number) {
 
 /**
  * Function to create the PHQ-9 questionnaire in HTML
+ *
  * @return string
  */
 function makePHQ () {
