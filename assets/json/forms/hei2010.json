@@ -1,0 +1,82 @@
+{
+  "form": {
+    "name": {
+      "short": "hei-2010",
+      "long": "healthy eating index - 2010"
+    },
+    "capitalName": {
+      "short": "HEI-2010",
+      "long": "Healthy Eating Index - 2010"
+    },
+    "information": {
+      "url": "http://epi.grants.cancer.gov/hei/",
+      "form": "http://1.usa.gov/1M8nBKo"
+    },
+    "for": "food",
+    "questions": 15,
+    "indexRange": [1, 100],
+    "about": "From here you can log what you've eaten, by filling out a modified Healthy Eating Index - 2010.<br>Food is important to your mental health as it affects such things as your blood sugar and results of it tend to a have a big role in how we see ourselves.<br><br>Ready to begin monitoring your eating?"
+  },
+  "questions": [
+    {
+      "order": 1,
+      "id": "hei1",
+      "qualifier": "totalFruit",
+      "question": "Total Fruit",
+      "information": "including fruit juice",
+      "recommended": "0.8 cups"
+    }
+  ],
+  "answers": {
+    "1": {
+      "label": "None",
+      "value": 0.125
+    },
+    "2": {
+      "label": "A bit",
+      "value": 0.375
+    },
+    "3": {
+      "label": "A fair amount",
+      "value": 0.625
+    },
+    "4": {
+      "label": "A lot, or more",
+      "value": 0.875
+    }
+  },
+  "logic": [
+    {
+      "description": "Distributing proteins appropriately, whether high or low.",
+      "type": "if",
+      "statement": {
+        "conditions": [
+          {
+            "key": "protein",
+            "is": "==",
+            "value": 0.875
+          }
+        ],
+        "then": [
+          {
+            "key": "vegetables",
+            "operation": "+",
+            "value": 1
+          }
+        ],
+        "else": [
+          {
+            "key": "protein",
+            "operation": "+",
+            "value": "beansPeas"
+          },
+          {
+            "key": "seafoodPlants",
+            "operation": "+",
+            "value": "beansPeas"
+          }
+        ]
+      }
+    }
+  ]
+}
