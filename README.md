@@ -2,7 +2,7 @@
 Low mood tracker and correlator being created for the whole world to use for free.
 
 ## Contributing
-To contribute, check issues with the appropriate label for what you have time to do.
+To contribute, check issues with the [appropriate label](https://github.com/Zbee/ditto/labels) for what you have time to do.
 
 ### Coding Standards
 If you're using [JetBrains'](https://www.jetbrains.com/) [PhpStorm IDE](https://www.jetbrains.com/phpstorm),
