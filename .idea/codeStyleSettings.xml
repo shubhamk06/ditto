@@ -34,8 +34,9 @@
         </XML>
         <codeStyleSettings language="JSON">
           <option name="WRAP_LONG_LINES" value="true" />
+          <option name="WRAP_ON_TYPING" value="0" />
           <indentOptions>
-            <option name="CONTINUATION_INDENT_SIZE" value="82" />
+            <option name="CONTINUATION_INDENT_SIZE" value="2" />
             <option name="TAB_SIZE" value="2" />
           </indentOptions>
         </codeStyleSettings>
