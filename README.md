@@ -1,8 +1,10 @@
 # ditto
 Low mood tracker and correlator being created for the whole world to use for free.
 
+[To-Do List](https://github.com/Zbee/ditto/issues?q=is%3Aissue+is%3Aopen+label%3A%22urgency%3B+todo%22)
+
 ## Contributing
-To contribute, check issues with the [appropriate label](https://github.com/Zbee/ditto/labels) for what you have time to do.
+To contribute, check issues with the [appropriate label](https://github.com/Zbee/ditto/labels) for what you have time to.
 
 ### Coding Standards
 If you're using [JetBrains'](https://www.jetbrains.com/) [PhpStorm IDE](https://www.jetbrains.com/phpstorm),
