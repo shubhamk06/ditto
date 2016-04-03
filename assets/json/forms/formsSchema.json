@@ -109,62 +109,17 @@
     },
     "answers": {
       "description": "Labels and values for the answer buttons.",
-      "type": "object",
-      "properties": {
-        "1": {
-          "description": "The first answer button.",
-          "type": "object",
-          "properties": {
-            "label": {
-              "description": "The label for the button.",
-              "type": "string"
-            },
-            "value": {
-              "description": "The value for the button.",
-              "type": "number"
-            }
-          }
-        },
-        "2": {
-          "description": "The second answer button.",
-          "type": "object",
-          "properties": {
-            "label": {
-              "description": "The label for the button.",
-              "type": "string"
-            },
-            "value": {
-              "description": "The value for the button.",
-              "type": "number"
-            }
-          }
-        },
-        "3": {
-          "description": "The third answer button.",
-          "type": "object",
-          "properties": {
-            "label": {
-              "description": "The label for the button.",
-              "type": "string"
-            },
-            "value": {
-              "description": "The value for the button.",
-              "type": "number"
-            }
-          }
-        },
-        "4": {
-          "description": "The fourth answer button.",
-          "type": "object",
-          "properties": {
-            "label": {
-              "description": "The label for the button.",
-              "type": "string"
-            },
-            "value": {
-              "description": "The value for the button.",
-              "type": "number"
-            }
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "description": "The label for the button.",
+            "type": "string"
+          },
+          "value": {
+            "description": "The value for the button.",
+            "type": "number"
           }
         }
       }
@@ -183,7 +138,7 @@
           "type": {
             "description": "The type of the logic step.",
             "type": "string",
-            "enum": ["if"]
+            "enum": ["if", "do"]
           },
           "statement": {
             "description": "The conditions, and results of the logic step.",
@@ -191,7 +146,7 @@
             "properties": {
               "conditions": {
                 "description": "The conditions the logic step's statement must fulfill.",
-                "type": "array",
+                "type": ["array", "null"],
                 "items": {
                   "type": "object",
                   "properties": {
@@ -253,7 +208,7 @@
               },
               "else": {
                 "description": "Operations to be performed if the conditions aren't met.",
-                "type": "array",
+                "type": ["array", "null"],
                 "items": {
                   "type": "object",
                   "properties": {

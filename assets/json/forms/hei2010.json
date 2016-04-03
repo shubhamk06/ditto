@@ -27,24 +27,24 @@
       "recommended": "0.8 cups"
     }
   ],
-  "answers": {
-    "1": {
+  "answers": [
+    {
       "label": "None",
       "value": 0.125
     },
-    "2": {
+    {
       "label": "A bit",
       "value": 0.375
     },
-    "3": {
+    {
       "label": "A fair amount",
       "value": 0.625
     },
-    "4": {
+    {
       "label": "A lot, or more",
       "value": 0.875
     }
-  },
+  ],
   "logic": [
     {
       "description": "Distributing proteins appropriately, whether high or low.",
@@ -72,6 +72,19 @@
           },
           {
             "key": "seafoodPlants",
+            "operation": "+",
+            "value": "beansPeas"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Adding beans and peas to dark greens.",
+      "type": "do",
+      "statement": {
+        "then": [
+          {
+            "key": "darkGreens",
             "operation": "+",
             "value": "beansPeas"
           }

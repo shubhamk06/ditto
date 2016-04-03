@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="formsSchema">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="formsSchema" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="directory" value="true" />
+                    <option name="path" value="assets\json\forms" />
+                  </Item>
+                </list>
+              </option>
+              <option name="relativePathToSchema" value="assets\json\forms\formsSchema.json" />
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>
