@@ -44,6 +44,13 @@ $dataPointsPerm = [
       <?php if (count($foodPoints) == 0): ?>
         <a class="button" href="/enter/food/">Log Food</a>
       <?php endif; ?>
+      <?php if ((count($moodPoints) + count($sleepPoints) + count($foodPoints))
+                == 3
+      ): ?>
+        Great job on remembering to log everything today!
+        <br>
+        Come back tomorrow, and do it again to identify correlations.
+      <?php endif; ?>
     </div>
   </div>
 
@@ -188,9 +195,7 @@ $dataPointsPerm = [
   <script>
     var chartOptions = {
       backgroundColor: "#00b8f1",
-      chart          : {
-        title: '', subtitle: ''
-      },
+      chart          : {title: '', subtitle: ''},
       hAxis          : {
         title         : 'Time',
         minorGridlines: {color: "white"},
@@ -205,10 +210,11 @@ $dataPointsPerm = [
         baselineColor : "white"
       },
       colors         : ['white', 'white', 'white'],
-      pointSize      : 7,
+      pointSize      : 5,
       pointShape     : "circle",
       legend         : {textStyle: {color: "white"}},
-      height         : 500
+      height         : 500,
+      curveType      : 'function'
     };
   </script>
 
