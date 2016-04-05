@@ -1,4 +1,4 @@
-# ditto
+# ditto <img src="https://raw.githubusercontent.com/Zbee/ditto/master/assets/img/favicon-xl.png" width="32">
 Low mood tracker and correlator being created for the whole world to use for free.
 
 [To-Do List](https://github.com/Zbee/ditto/issues?q=is%3Aissue+is%3Aopen+label%3A%22urgency%3B+todo%22)
