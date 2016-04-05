@@ -18,6 +18,7 @@ html, body {
 
 .mini {
   height: auto;
+    min-height: 0;
 }
 
 .dark {

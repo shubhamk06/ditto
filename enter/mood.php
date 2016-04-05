@@ -36,7 +36,7 @@ function makePHQQ ($number) {
       <div class="container">
         <h1 class="bigbold">Question %cn of Nine</h1>
         <br><br>
-        Over the past two weeks, how often have you been bothered by ...
+        Recently, how often have you been bothered by ...
         <br><br>
         <b>%s</b>
         <br><br>

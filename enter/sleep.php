@@ -146,7 +146,7 @@
     <h1 id="tagline"></h1>
     <span id="content"></span>
     <br><br>
-    <a class="button" href="/dash/">Retun to Dash</a>
+    <a class="button" href="/dash/">Return to Dash</a>
   </div>
 </div>
 
