@@ -15,10 +15,7 @@
     "for": "mood",
     "questions": 10,
     "indexRange": [1, 27],
-    "about": "From here you can log your mood for today, by filling out a
-    modified PHQ-9 questionnaire.<br>Tracking your mood is important to find
-    correlations between it and other aspects of your life.<br><br>Ready to
-    begin monitoring your mood?"
+    "about": "From here you can log your mood for today, by filling out a modified PHQ-9 questionnaire.<br>Tracking your mood is important to find correlations between it and other aspects of your life.<br><br>Ready to begin monitoring your mood?"
   },
   "questions": [],
   "logic": []

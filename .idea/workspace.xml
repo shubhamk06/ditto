@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87404aab-d3ce-4263-ac0a-6e864b08b95e" name="Default" comment="Do statements, extra HEI-2010 logic">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/json/forms/phq9.json" />
+    <list default="true" id="87404aab-d3ce-4263-ac0a-6e864b08b95e" name="Default" comment="Small fixes,start of phq-9">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/json/forms/formsSchema.json" afterPath="$PROJECT_DIR$/assets/json/forms/formsSchema.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enter/mood.php" afterPath="$PROJECT_DIR$/enter/mood.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enter/sleep.php" afterPath="$PROJECT_DIR$/enter/sleep.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/json/forms/phq9.json" afterPath="$PROJECT_DIR$/assets/json/forms/phq9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enter/food.php" afterPath="$PROJECT_DIR$/enter/food.php" />
     </list>
     <ignored path="ditto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phq9.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="phq9.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/json/forms/phq9.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="306">
+              <caret line="17" column="219" selection-start-line="17" selection-start-column="219" selection-end-line="17" selection-end-column="219" />
               <folding />
             </state>
           </provider>
@@ -82,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sleep.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sleep.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/enter/sleep.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+            <state relative-caret-position="504">
+              <caret line="163" column="60" selection-start-line="163" selection-start-column="60" selection-end-line="163" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -126,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/assets/json/forms/formsSchema.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="307">
-              <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+              <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -147,7 +144,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/57ffa0d3-45f9-4948-97b7-f8bebeda498a/console.sql" />
         <option value="$PROJECT_DIR$/assets/php/ditto.php" />
         <option value="$PROJECT_DIR$/assets/database.sql" />
-        <option value="$PROJECT_DIR$/enter/food.php" />
         <option value="$PROJECT_DIR$/enter/report.php" />
         <option value="$PROJECT_DIR$/assets/php/footer.php" />
         <option value="$PROJECT_DIR$/dash/index.php" />
@@ -157,8 +153,9 @@
         <option value="$PROJECT_DIR$/enter/mood.php" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/assets/json/forms/formsSchema.json" />
-        <option value="$PROJECT_DIR$/assets/json/forms/phq9.json" />
         <option value="$PROJECT_DIR$/enter/sleep.php" />
+        <option value="$PROJECT_DIR$/enter/food.php" />
+        <option value="$PROJECT_DIR$/assets/json/forms/phq9.json" />
       </list>
     </option>
   </component>
@@ -545,7 +542,7 @@
       <workItem from="1459701432063" duration="743000" />
       <workItem from="1459702538882" duration="15000" />
       <workItem from="1459702661290" duration="14000" />
-      <workItem from="1459834617143" duration="3904000" />
+      <workItem from="1459834617143" duration="4023000" />
     </task>
     <task id="LOCAL-00001" summary="Improved, random">
       <created>1457325150168</created>
@@ -631,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1459837576728</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Small fixes,start of phq-9">
+      <created>1459838836071</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1459838836071</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers>
       <GitHub shared="false" url="https://github.com">
         <option name="assignedIssuesOnly" value="false" />
@@ -652,7 +656,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7394000" />
+    <option name="totallyTimeSpent" value="7513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -717,7 +721,8 @@
     <MESSAGE value="Food chart" />
     <MESSAGE value="Do statements, extra HEI-2010 logic" />
     <MESSAGE value="Larger logos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Larger logos" />
+    <MESSAGE value="Small fixes,start of phq-9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small fixes,start of phq-9" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1064,22 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/enter/food.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1344">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-          <folding>
-            <element signature="n#makeHEIQ#0;n#!!top" expanded="true" />
-            <marker date="1457901303252" expanded="true" signature="2209:3009" placeholder="..." />
-            <marker date="1457901303252" expanded="true" signature="2239:2998" placeholder="..." />
-            <marker date="1457901303252" expanded="true" signature="2483:2541" placeholder="..." />
-            <marker date="1457901303252" expanded="true" signature="2609:2668" placeholder="..." />
-            <marker date="1457901303252" expanded="true" signature="2740:2807" placeholder="..." />
-            <marker date="1457901303252" expanded="true" signature="2875:2985" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/enter/mood.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1119,15 +1108,7 @@
     <entry file="file://$PROJECT_DIR$/assets/json/forms/formsSchema.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/json/forms/phq9.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1142,8 +1123,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/enter/sleep.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+        <state relative-caret-position="504">
+          <caret line="163" column="60" selection-start-line="163" selection-start-column="60" selection-end-line="163" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/enter/food.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="182" column="41" selection-start-line="182" selection-start-column="41" selection-end-line="182" selection-end-column="41" />
+          <folding>
+            <element signature="n#makeHEIQC#0;n#!!top" expanded="true" />
+            <element signature="n#makeHEIQ#0;n#!!top" expanded="true" />
+            <marker date="1459838910644" expanded="true" signature="2209:3009" placeholder="..." />
+            <marker date="1459838910644" expanded="true" signature="2239:2998" placeholder="..." />
+            <marker date="1459838910644" expanded="true" signature="2483:2541" placeholder="..." />
+            <marker date="1459838910644" expanded="true" signature="2609:2668" placeholder="..." />
+            <marker date="1459838910644" expanded="true" signature="2740:2807" placeholder="..." />
+            <marker date="1459838910644" expanded="true" signature="2875:2985" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/json/forms/phq9.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="219" selection-start-line="17" selection-start-column="219" selection-end-line="17" selection-end-column="219" />
           <folding />
         </state>
       </provider>
