@@ -85,6 +85,7 @@ dittoForms = {
       }
 
       dittoForms.console.log();
+      callback();
       return true;
     }
   }
