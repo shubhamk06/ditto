@@ -77,7 +77,43 @@
       "order": "f",
       "id": "phqf",
       "qualifier": "phqf",
-      "question": "How difficult have those problems made it for you to do your work, take care of things at home, or get along with other people?"
+      "question": "How difficult have those problems made it for you to do your work, take care of things at home, or get along with other people?",
+      "answers": [
+        {
+          "label": "Not Difficult",
+          "value": 0
+        },
+        {
+          "label": "Somewhat Difficult",
+          "value": 1
+        },
+        {
+          "label": "Very Difficult",
+          "value": 2
+        },
+        {
+          "label": "Extremely Difficult",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "label": "Not At All",
+      "value": 0
+    },
+    {
+      "label": "Somewhat Bothered",
+      "value": 1
+    },
+    {
+      "label": "Very bothered",
+      "value": 2
+    },
+    {
+      "label": "Bothered All Day",
+      "value": 3
     }
   ],
   "logic": []

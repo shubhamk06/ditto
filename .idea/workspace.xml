@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87404aab-d3ce-4263-ac0a-6e864b08b95e" name="Default" comment="Typos">
+    <list default="true" id="87404aab-d3ce-4263-ac0a-6e864b08b95e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/json/forms/formsSchema.json" afterPath="$PROJECT_DIR$/assets/json/forms/formsSchema.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/json/forms/hei2010.json" afterPath="$PROJECT_DIR$/assets/json/forms/hei2010.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/json/forms/phq9.json" afterPath="$PROJECT_DIR$/assets/json/forms/phq9.json" />
     </list>
     <ignored path="ditto.iws" />
@@ -43,8 +42,8 @@
       <file leaf-file-name="formsSchema.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/json/forms/formsSchema.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+            <state relative-caret-position="1904">
+              <caret line="112" column="38" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -53,8 +52,8 @@
       <file leaf-file-name="ditto.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/ditto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+            <state relative-caret-position="340">
+              <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -63,8 +62,8 @@
       <file leaf-file-name="mood.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/enter/mood.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="181" column="15" selection-start-line="181" selection-start-column="15" selection-end-line="183" selection-end-column="28" />
+            <state relative-caret-position="2397">
+              <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="183" selection-end-column="28" />
               <folding>
                 <element signature="n#makePHQQ#0;n#!!top" expanded="true" />
                 <marker date="1459837826625" expanded="true" signature="1190:1965" placeholder="..." />
@@ -103,8 +102,8 @@
       <file leaf-file-name="phq9.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/json/forms/phq9.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+            <state relative-caret-position="520">
+              <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -134,8 +133,8 @@
         <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/enter/sleep.php" />
         <option value="$PROJECT_DIR$/enter/food.php" />
-        <option value="$PROJECT_DIR$/assets/json/forms/formsSchema.json" />
         <option value="$PROJECT_DIR$/assets/json/forms/hei2010.json" />
+        <option value="$PROJECT_DIR$/assets/json/forms/formsSchema.json" />
         <option value="$PROJECT_DIR$/assets/json/forms/phq9.json" />
       </list>
     </option>
@@ -208,7 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -334,6 +332,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -414,7 +413,9 @@
       <workItem from="1459702538882" duration="15000" />
       <workItem from="1459702661290" duration="14000" />
       <workItem from="1459834617143" duration="5291000" />
-      <workItem from="1460264698564" duration="2087000" />
+      <workItem from="1460264698564" duration="2755000" />
+      <workItem from="1460301914214" duration="315000" />
+      <workItem from="1460302259086" duration="345000" />
     </task>
     <task id="LOCAL-00001" summary="Improved, random">
       <created>1457325150168</created>
@@ -514,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1459838955503</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Continuing phq9">
+      <created>1460266807463</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1460266807463</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers>
       <GitHub shared="false" url="https://github.com">
         <option name="assignedIssuesOnly" value="false" />
@@ -535,7 +543,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10868000" />
+    <option name="totallyTimeSpent" value="12196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,7 +559,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17480719" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23714653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24357326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22557841" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -564,7 +572,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36953726" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32123655" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32166892" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -602,7 +610,8 @@
     <MESSAGE value="Larger logos" />
     <MESSAGE value="Small fixes,start of phq-9" />
     <MESSAGE value="Typos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Typos" />
+    <MESSAGE value="Continuing phq9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continuing phq9" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -955,14 +964,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/json/forms/formsSchema.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+        <state relative-caret-position="1904">
+          <caret line="112" column="38" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -975,18 +983,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/ditto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/enter/mood.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="181" column="15" selection-start-line="181" selection-start-column="15" selection-end-line="183" selection-end-column="28" />
+        <state relative-caret-position="2397">
+          <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="183" selection-end-column="28" />
           <folding>
             <element signature="n#makePHQQ#0;n#!!top" expanded="true" />
             <marker date="1459837826625" expanded="true" signature="1190:1965" placeholder="..." />
@@ -1011,10 +1011,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ditto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/json/forms/phq9.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+        <state relative-caret-position="520">
+          <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
           <folding />
         </state>
       </provider>

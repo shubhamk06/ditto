@@ -110,15 +110,18 @@
           },
           "answers": {
             "description": "Question-specific labels and values for the answer buttons.",
-            "type": ["object", "null"],
-            "properties": {
-              "label": {
-                "description": "The label for the button.",
-                "type": "string"
-              },
-              "value": {
-                "description": "The value for the button.",
-                "type": "number"
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "description": "The label for the button.",
+                  "type": "string"
+                },
+                "value": {
+                  "description": "The value for the button.",
+                  "type": "number"
+                }
               }
             }
           }
