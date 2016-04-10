@@ -9,7 +9,7 @@
 //responses                    | array<i>| array of responses provided
 //setup                        | object  | functions for form setup/construction
 //setup.fillIn                 | void    | filling in dittoForms variables
-//setup.verify                 | boolean | verify form is valid
+//setup.verify                 | void    | verify form is valid
 //function                     | object  | functions for form functionality
 //function.management          | void    | managing form responses
 //function.call                | void    | calling form's ditto functions
@@ -47,26 +47,18 @@ dittoForms = {
 
       dittoForms.console.log();
     }, //Function to verify that the form provided was correct
-    "verify": function () {
+    "verify": function (callback) {
       console.log("dittoForms.setup.verify()");
 
-      var toReturn = false;
-
       $.getJSON(
-        "https://ditto.zbee.me/assets/json/forms/"
-        + dittoForms.formID
-        + ".json", function (json) {
+        "https://ditto.zbee.me/assets/json/forms/" + dittoForms.formID + ".json"
+      ).then(
+        function (json) {
           dittoForms.setup.fillIn(json);
-          toReturn = true;
-        }
-      ).fail(
-        function () {
-          toReturn = false;
+          dittoForms.create.formActual(callback);
+          dittoForms.console.log();
         }
       );
-
-      dittoForms.console.log();
-      return toReturn;
     }
   },
 
@@ -75,14 +67,29 @@ dittoForms = {
   },
 
   "create": {
-    "question": {}, "answer": {}, "form": function (formID, callback) {
+    "question"     : {}, "answer": {
+
+    }, //Constructor
+    "form": function (formID, callback) {
       console.log("dittoForms.create.form()");
 
       dittoForms.formID = formID;
-      var verified      = dittoForms.setup.verify();
-      if (!verified) {
+      dittoForms.setup.verify(callback);
+
+      dittoForms.console.log();
+    }, //Create form once questions are loaded
+    "formActual": function (callback) {
+      console.log("dittoForms.create.formActual()");
+
+      if (!Array.isArray(dittoForms.questions)) {
         return false;
       }
+
+      dittoForms.questions.forEach(
+        function (question) {
+          console.log(question);
+        }
+      );
 
       dittoForms.console.log();
       callback();
