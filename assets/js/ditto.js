@@ -1,7 +1,7 @@
 "use strict";
 
 //ditto library
-//name                         | return  | comment
+//variable/function name       | return  | comment
 //depressionIndex              | integer | total of PHQ-9 questions
 //sleepQuality                 | integer | quality of sleep
 //healthyEatingIndex           | integer | total of HEI-2010 questions

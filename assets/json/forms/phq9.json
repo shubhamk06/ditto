@@ -16,7 +16,8 @@
     "questions": 10,
     "indexRange": [1, 27],
     "about": "From here you can log your mood for today, by filling out a modified PHQ-9 questionnaire.<br>Tracking your mood is important to find correlations between it and other aspects of your life.<br><br>Ready to begin monitoring your mood?",
-    "questionPreface": "Today, how much have you been bothered by ..."
+    "questionPreface": "Today, how much have you been bothered by ...",
+    "callback": "ditto.calculate.depressionIndex"
   },
   "questions": [
     {
@@ -115,6 +116,5 @@
       "label": "Bothered All Day",
       "value": 3
     }
-  ],
-  "logic": []
+  ]
 }

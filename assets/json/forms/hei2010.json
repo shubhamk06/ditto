@@ -16,7 +16,8 @@
     "questions": 15,
     "indexRange": [1, 100],
     "about": "From here you can log what you've eaten, by filling out a modified Healthy Eating Index - 2010.<br>Food is important to your mental health as it affects such things as your blood sugar and results of it tend to a have a big role in how we see ourselves.<br><br>Ready to begin monitoring your eating?",
-    "questionPreface": "How much of this item have you had today?"
+    "questionPreface": "How much of this item have you had today?",
+    "callback": "ditto.calculate.healthyEatingIndex"
   },
   "questions": [
     {
@@ -44,53 +45,6 @@
     {
       "label": "A lot, or more",
       "value": 0.875
-    }
-  ],
-  "logic": [
-    {
-      "description": "Distributing proteins appropriately, whether high or low.",
-      "type": "if",
-      "statement": {
-        "conditions": [
-          {
-            "key": "protein",
-            "is": "==",
-            "value": 0.875
-          }
-        ],
-        "then": [
-          {
-            "key": "vegetables",
-            "operation": "+",
-            "value": 1
-          }
-        ],
-        "else": [
-          {
-            "key": "protein",
-            "operation": "+",
-            "value": "beansPeas"
-          },
-          {
-            "key": "seafoodPlants",
-            "operation": "+",
-            "value": "beansPeas"
-          }
-        ]
-      }
-    },
-    {
-      "description": "Adding beans and peas to dark greens.",
-      "type": "do",
-      "statement": {
-        "then": [
-          {
-            "key": "darkGreens",
-            "operation": "+",
-            "value": "beansPeas"
-          }
-        ]
-      }
     }
   ]
 }

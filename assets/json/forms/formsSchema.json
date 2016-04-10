@@ -75,6 +75,10 @@
         "questionPreface": {
           "description": "Preface information for each question.",
           "type": "string"
+        },
+        "callback": {
+          "description": "ditto.js function to call after completing form questions.",
+          "type": "string"
         }
       }
     },
@@ -141,128 +145,6 @@
           "value": {
             "description": "The value for the button.",
             "type": "number"
-          }
-        }
-      }
-    },
-    "logic": {
-      "description": "Any logic necessary to successfully calculate the index.",
-      "type": ["array", "null"],
-      "items": {
-        "description": "A logic step",
-        "type": "object",
-        "properties": {
-          "description": {
-            "description": "The provided description of the logic step; primarily for documentation.",
-            "type": ["string", "null"]
-          },
-          "type": {
-            "description": "The type of the logic step.",
-            "type": "string",
-            "enum": ["if", "do"]
-          },
-          "statement": {
-            "description": "The conditions, and results of the logic step.",
-            "type": "object",
-            "properties": {
-              "conditions": {
-                "description": "The conditions the logic step's statement must fulfill.",
-                "type": ["array", "null"],
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "key": {
-                      "description": "Variable that is being checked.",
-                      "type": "string"
-                    },
-                    "is": {
-                      "description": "Comparison operator",
-                      "type": "string",
-                      "enum": ["==", "===", ">", "<", "<=", ">="]
-                    },
-                    "value": {
-                      "description": "Variable or value compared against.",
-                      "type": ["string", "number", "boolean"]
-                    },
-                    "join": {
-                      "description": "Method used to join this condition to the previous.",
-                      "type": ["string", "null"],
-                      "enum": ["&&", "||", "and", "or"]
-                    }
-                  }
-                }
-              },
-              "then": {
-                "description": "Operations to be performed if the conditions are met.",
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "key": {
-                      "description": "Variable that is being modified.",
-                      "type": "string"
-                    },
-                    "operation": {
-                      "description": "Operation to perform on variable.",
-                      "type": "string",
-                      "enum": [
-                        "+",
-                        "-",
-                        "++",
-                        "--",
-                        "+=",
-                        ".",
-                        "/",
-                        "/=",
-                        "*",
-                        "*=",
-                        "-=",
-                        "@@"
-                      ]
-                    },
-                    "value": {
-                      "description": "Variable or value to modify variable by.",
-                      "type": ["string", "number"]
-                    }
-                  }
-                }
-              },
-              "else": {
-                "description": "Operations to be performed if the conditions aren't met.",
-                "type": ["array", "null"],
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "key": {
-                      "description": "Variable that is being modified.",
-                      "type": "string"
-                    },
-                    "operation": {
-                      "description": "Operation to perform on variable.",
-                      "type": "string",
-                      "enum": [
-                        "+",
-                        "-",
-                        "++",
-                        "--",
-                        "+=",
-                        ".",
-                        "/",
-                        "/=",
-                        "*",
-                        "*=",
-                        "-=",
-                        "@@"
-                      ]
-                    },
-                    "value": {
-                      "description": "Variable or value to modify variable by.",
-                      "type": ["string", "number"]
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
