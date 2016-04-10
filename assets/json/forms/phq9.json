@@ -15,8 +15,70 @@
     "for": "mood",
     "questions": 10,
     "indexRange": [1, 27],
-    "about": "From here you can log your mood for today, by filling out a modified PHQ-9 questionnaire.<br>Tracking your mood is important to find correlations between it and other aspects of your life.<br><br>Ready to begin monitoring your mood?"
+    "about": "From here you can log your mood for today, by filling out a modified PHQ-9 questionnaire.<br>Tracking your mood is important to find correlations between it and other aspects of your life.<br><br>Ready to begin monitoring your mood?",
+    "questionPreface": "Today, how much have you been bothered by ..."
   },
-  "questions": [],
+  "questions": [
+    {
+      "order": 1,
+      "id": "phq1",
+      "qualifier": "phq1",
+      "question": "Little interest or pleasure in doing things"
+    },
+    {
+      "order": 2,
+      "id": "phq2",
+      "qualifier": "phq2",
+      "question": "Feeling down, depressed, or hopeless"
+    },
+    {
+      "order": 3,
+      "id": "phq3",
+      "qualifier": "phq3",
+      "question": "Trouble falling asleep, staying asleep, or sleeping too much"
+    },
+    {
+      "order": 4,
+      "id": "phq4",
+      "qualifier": "phq4",
+      "question": "Feeling tired or having little energy"
+    },
+    {
+      "order": 5,
+      "id": "phq5",
+      "qualifier": "phq5",
+      "question": "Poor appetite or overeating"
+    },
+    {
+      "order": 6,
+      "id": "phq6",
+      "qualifier": "phq6",
+      "question": "Feeling bad about yourself - or that you're a failure or have let yourself or your family down"
+    },
+    {
+      "order": 7,
+      "id": "phq7",
+      "qualifier": "phq7",
+      "question": "Trouble concentrating on things, such as reading or watching TV"
+    },
+    {
+      "order": 8,
+      "id": "phq8",
+      "qualifier": "phq8",
+      "question": "Moving or speaking so slowly that other people noticed, or the opposite - being so fidgety or restless that you have been moving around a lot more than usual"
+    },
+    {
+      "order": 9,
+      "id": "phq9",
+      "qualifier": "phq9",
+      "question": "Thoughts that you would be better off dead or of hurting yourself in some way"
+    },
+    {
+      "order": "f",
+      "id": "phqf",
+      "qualifier": "phqf",
+      "question": "How difficult have those problems made it for you to do your work, take care of things at home, or get along with other people?"
+    }
+  ],
   "logic": []
 }

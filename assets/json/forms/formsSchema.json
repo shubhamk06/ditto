@@ -71,6 +71,10 @@
         "about": {
           "description": "Description at the top of the form.",
           "type": "string"
+        },
+        "questionPreface": {
+          "description": "Preface information for each question.",
+          "type": "string"
         }
       }
     },
@@ -105,8 +109,7 @@
             "type": ["string", "null"]
           },
           "answers": {
-            "description": "Question-specific labels and values for the
-            answer buttons.",
+            "description": "Question-specific labels and values for the answer buttons.",
             "type": ["object", "null"],
             "properties": {
               "label": {

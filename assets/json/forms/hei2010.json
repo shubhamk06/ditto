@@ -15,7 +15,8 @@
     "for": "food",
     "questions": 15,
     "indexRange": [1, 100],
-    "about": "From here you can log what you've eaten, by filling out a modified Healthy Eating Index - 2010.<br>Food is important to your mental health as it affects such things as your blood sugar and results of it tend to a have a big role in how we see ourselves.<br><br>Ready to begin monitoring your eating?"
+    "about": "From here you can log what you've eaten, by filling out a modified Healthy Eating Index - 2010.<br>Food is important to your mental health as it affects such things as your blood sugar and results of it tend to a have a big role in how we see ourselves.<br><br>Ready to begin monitoring your eating?",
+    "questionPreface": "How much of this item have you had today?"
   },
   "questions": [
     {
