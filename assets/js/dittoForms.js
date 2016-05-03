@@ -67,10 +67,8 @@ dittoForms = {
   },
 
   "create": {
-    "question"     : {}, "answer": {
-
-    }, //Constructor
-    "form": function (formID, callback) {
+    "question"  : {}, "answer": {}, //Constructor
+    "form"      : function (formID, callback) {
       console.log("dittoForms.create.form()");
 
       dittoForms.formID = formID;
@@ -87,7 +85,27 @@ dittoForms = {
 
       dittoForms.questions.forEach(
         function (question) {
-          console.log(question);
+          console.log(JSON.stringify(question));
+          $("body").append(
+            "<div class='ribbon' id='"
+            + question.id
+            + "'>"
+            + "<div class='container'></div>"
+            + "</div>"
+          );
+          var questionDiv = $("body").find("#" + question.id + " .container");
+          questionDiv.append(
+            "<h1 class='bigbold'>"
+            + "Question "
+            + question.order
+            + " out of "
+            + dittoForms.questions.length
+            + "</h1>"
+            + "<br><br>"
+            + "<b>"
+            + question.question
+            + "</b>"
+          );
         }
       );
 
