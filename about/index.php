@@ -177,7 +177,7 @@ require("../assets/php/header.php");
       As part of my belief that you shouldn't need to pay to receive help,
       willing data on correlations
       (<a href="/about/legal">completely unidentifiable</a>,
-      <a href="/about/#opting" completely optional</a>) is
+      <a href="/about/#opting">completely optional</a>) is
       <a href="/data/">published</a> for free to hopefully help further
       research and healthcare.
       The code running ditto is also
@@ -208,9 +208,8 @@ require("../assets/php/header.php");
       audited, certified servers.
     </p>
     <p>
-      Personal data is encrypted locally (secret even to ditto), and
-      identifiable information is encrypted on ditto servers with AES-256 bit
-      encryption and SHA-512 salted hashes.
+      Personal data is encrypted on ditto with AES-256 bit encryption and
+      SHA-512 salted hashes.
     </p>
     <p>
       Best practices in all applicable technology is adhered to when coding,
@@ -218,7 +217,7 @@ require("../assets/php/header.php");
     </p>
     <p>
       Healthcare information security standards, such as the HIPAA Security
-      Rule, are followed when handling data, as it is healthcare information.
+      Rule, are followed when handling data and servers.
     </p>
     <p>
       All code running ditto is available to the public for transparency,
@@ -305,7 +304,7 @@ require("../assets/php/header.php");
       PHQ-9 by Pfizer is used in tracking low mood.
       Logging your mood is a modified PHQ-9 form.
     </p>
-    
+
     <p>
       HEI-2010 by the USDA is used in tracking eating.
       Logging food is a modified HEI-2010 form.

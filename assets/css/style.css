@@ -1,5 +1,6 @@
 html, body {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ html, body {
 
 .ribbon {
   display: block;
-    min-height: 100%;
+  min-height: 100%;
   text-align: center;
   background: #00b8f1;
   margin: 0;
@@ -18,7 +19,7 @@ html, body {
 
 .mini {
   height: auto;
-    min-height: 0;
+  min-height: 0;
 }
 
 .dark {
@@ -77,8 +78,14 @@ a:hover {
 }
 
 @keyframes gradualB {
-  from {background: white; color: #00b8f1;}
-  to {background: #00b8f1; color: white;}
+  from {
+    background: white;
+    color: #00b8f1;
+  }
+  to {
+    background: #00b8f1;
+    color: white;
+  }
 }
 
 .button:hover, input:focus {
@@ -94,8 +101,14 @@ a:hover {
 }
 
 @keyframes gradualBD {
-  from {background: white; color: #212121;}
-  to {background: #212121; color: white;}
+  from {
+    background: white;
+    color: #212121;
+  }
+  to {
+    background: #212121;
+    color: white;
+  }
 }
 
 .dark .button:hover, .dark input:focus {
@@ -103,10 +116,21 @@ a:hover {
   color: white !important;
 }
 
-input::-webkit-input-placeholder {color: #00b8f1 !important;}
-input:-moz-placeholder {color: #00b8f1 !important;}
-input::-moz-placeholder {color: #00b8f1 !important;}
-input:-ms-input-placeholder {color: #00b8f1 !important;}
+input::-webkit-input-placeholder {
+  color: #00b8f1 !important;
+}
+
+input:-moz-placeholder {
+  color: #00b8f1 !important;
+}
+
+input::-moz-placeholder {
+  color: #00b8f1 !important;
+}
+
+input:-ms-input-placeholder {
+  color: #00b8f1 !important;
+}
 
 hr {
   height: 1px;

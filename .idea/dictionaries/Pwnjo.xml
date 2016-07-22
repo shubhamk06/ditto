@@ -3,13 +3,16 @@
     <words>
       <w>abcdefghijklmnopqrstuvwxyz</w>
       <w>astextplain</w>
+      <w>auditable</w>
       <w>bigbold</w>
       <w>bootstrapcdn</w>
       <w>clickable</w>
+      <w>correlator</w>
       <w>cqaimh</w>
       <w>crlf</w>
       <w>csharp</w>
       <w>dbname</w>
+      <w>deanonymize</w>
       <w>docx</w>
       <w>dysthymia</w>
       <w>fieldsets</w>
@@ -17,6 +20,7 @@
       <w>googleapis</w>
       <w>googletagmanager</w>
       <w>gridlines</w>
+      <w>healthcare</w>
       <w>keybase</w>
       <w>loginrequired</w>
       <w>mailto</w>
@@ -32,6 +36,7 @@
       <w>searchfield</w>
       <w>signup</w>
       <w>strt</w>
+      <w>suicidality</w>
       <w>sumative</w>
       <w>summative</w>
       <w>tagline</w>

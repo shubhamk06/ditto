@@ -6,26 +6,28 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
-      <schema id="1" name="ditto"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="ditto">
+        <visible>1</visible>
+      </schema>
       <table id="2" parent="1" name="blobs"/>
       <table id="3" parent="1" name="dataPoints"/>
       <table id="4" parent="1" name="users"/>
       <column id="5" parent="2" name="id">
         <mandatory>1</mandatory>
-        <data-type>char(36)</data-type>
+        <data-type>char(36)|0</data-type>
       </column>
       <column id="6" parent="2" name="user">
         <mandatory>1</mandatory>
-        <data-type>char(36)</data-type>
+        <data-type>char(36)|0</data-type>
       </column>
       <column id="7" parent="2" name="date">
         <mandatory>1</mandatory>
-        <data-type>int(20)</data-type>
+        <data-type>int(20)|0</data-type>
       </column>
       <column id="8" parent="2" name="hash">
         <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
+        <data-type>varchar(128)|0</data-type>
       </column>
       <key id="9" parent="2" name="PRIMARY">
         <columns>id</columns>
@@ -33,23 +35,23 @@
       </key>
       <column id="10" parent="3" name="id">
         <mandatory>1</mandatory>
-        <data-type>char(36)</data-type>
+        <data-type>char(36)|0</data-type>
       </column>
       <column id="11" parent="3" name="user">
         <mandatory>1</mandatory>
-        <data-type>char(36)</data-type>
+        <data-type>char(36)|0</data-type>
       </column>
       <column id="12" parent="3" name="type">
         <mandatory>1</mandatory>
-        <data-type>tinyint(1)</data-type>
+        <data-type>tinyint(1)|0</data-type>
       </column>
       <column id="13" parent="3" name="date">
         <mandatory>1</mandatory>
-        <data-type>int(20)</data-type>
+        <data-type>int(20)|0</data-type>
       </column>
       <column id="14" parent="3" name="data">
         <mandatory>1</mandatory>
-        <data-type>text</data-type>
+        <data-type>text|0</data-type>
       </column>
       <key id="15" parent="3" name="PRIMARY">
         <columns>id</columns>
@@ -57,27 +59,27 @@
       </key>
       <column id="16" parent="4" name="id">
         <mandatory>1</mandatory>
-        <data-type>char(36)</data-type>
+        <data-type>char(36)|0</data-type>
       </column>
       <column id="17" parent="4" name="email">
         <mandatory>1</mandatory>
-        <data-type>varchar(256)</data-type>
+        <data-type>varchar(256)|0</data-type>
       </column>
       <column id="18" parent="4" name="salt">
         <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
+        <data-type>varchar(128)|0</data-type>
       </column>
       <column id="19" parent="4" name="password">
         <mandatory>1</mandatory>
-        <data-type>varchar(128)</data-type>
+        <data-type>varchar(128)|0</data-type>
       </column>
       <column id="20" parent="4" name="dateRegistered">
         <mandatory>1</mandatory>
-        <data-type>int(20)</data-type>
+        <data-type>int(20)|0</data-type>
       </column>
       <column id="21" parent="4" name="admin">
         <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
+        <data-type>int(1)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
       <index id="22" parent="4" name="email">

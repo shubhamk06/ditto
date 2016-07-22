@@ -33,16 +33,18 @@ $dataPointsPerm = [
     <div class="container">
       <h1 class="bigbold">Welcome</h1>
       <h1>To Your Dashboard</h1>
-      From here you can monitor your progress and log mood, sleep, and food.
+      From here you can view correlations and log mood and the parts of life
+      that play into it.
       <br><br>
       <?php if (count($moodPoints) == 0): ?>
         <a class="button" href="/enter/mood/">Log Mood</a>
-      <?php endif; ?>
-      <?php if (count($sleepPoints) == 0): ?>
-        <a class="button" href="/enter/sleep/">Log Sleep</a>
-      <?php endif; ?>
-      <?php if (count($foodPoints) == 0): ?>
-        <a class="button" href="/enter/food/">Log Food</a>
+      <?php else: ?>
+        <?php if (count($sleepPoints) == 0): ?>
+          <a class="button" href="/enter/sleep/">Log Sleep</a>
+        <?php endif; ?>
+        <?php if (count($foodPoints) == 0): ?>
+          <a class="button" href="/enter/food/">Log Food</a>
+        <?php endif; ?>
       <?php endif; ?>
       <?php if ((count($moodPoints) + count($sleepPoints) + count($foodPoints))
                 == 3
@@ -53,32 +55,6 @@ $dataPointsPerm = [
       <?php endif; ?>
     </div>
   </div>
-
-  <script>
-    var chartOptions = {
-      backgroundColor: "#00b8f1",
-      chart          : {title: '', subtitle: ''},
-      hAxis          : {
-        title         : 'Time',
-        minorGridlines: {color: "white"},
-        titleTextStyle: {color: "white"},
-        textStyle     : {color: "white"},
-        baselineColor : "white"
-      },
-      vAxis          : {
-        title         : 'Index',
-        titleTextStyle: {color: "white"},
-        textStyle     : {color: "white"},
-        baselineColor : "white"
-      },
-      colors         : ['white', 'white', 'white'],
-      pointSize      : 5,
-      pointShape     : "circle",
-      legend         : {textStyle: {color: "white"}},
-      height         : 500,
-      curveType      : 'function'
-    };
-  </script>
 
 <?php
 require("../assets/php/footer.php");

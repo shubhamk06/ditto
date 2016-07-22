@@ -4,31 +4,6 @@
 class ditto {
 
   /**
-   * Function leveraging openssl to create random data
-   *
-   * @param int $min
-   * @param int $max
-   *
-   * @return int
-   */
-  private function opensslRand ($min = 0, $max = 1000) {
-    $range = $max - $min;
-    if ($range < 1) {
-      return $min;
-    }
-    $log    = log($range, 2);
-    $bytes  = (int) ($log / 8) + 1;
-    $bits   = (int) $log + 1;
-    $filter = (int) (1 << $bits) - 1;
-    do {
-      $rnd = hexdec(bin2hex(openssl_random_pseudo_bytes($bytes)));
-      $rnd = $rnd & $filter;
-    } while ($rnd >= $range);
-
-    return $min + $rnd;
-  }
-
-  /**
    * Function leveraging openssl to create a random 128-char string
    *
    * @return string
@@ -55,40 +30,28 @@ class ditto {
   }
 
   /**
-   * Function to create a uuid v4
+   * Function leveraging openssl to create random data
    *
-   * @return string
+   * @param int $min
+   * @param int $max
+   *
+   * @return int
    */
-  static function uuid () {
-    return sprintf(
-      '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-      mt_rand(0, 0xffff),
-      mt_rand(0, 0xffff),
-      mt_rand(0, 0xffff),
-      mt_rand(0, 0x0fff) | 0x4000,
-      mt_rand(0, 0x3fff) | 0x8000,
-      mt_rand(0, 0xffff),
-      mt_rand(0, 0xffff),
-      mt_rand(0, 0xffff)
-    );
-  }
-
-  /**
-   * Function to redirect the user
-   *
-   * @param $url
-   *
-   * @return bool
-   */
-  public static function redirect ($url) {
-    if (!headers_sent()) {
-      header("HTTP/1.1 301 Moved Permanently");
-      header("Location: $url");
-
-      return true;
-    } else {
-      return false;
+  static function opensslRand ($min = 0, $max = 1000) {
+    $range = $max - $min;
+    if ($range < 1) {
+      return $min;
     }
+    $log    = log($range, 2);
+    $bytes  = (int) ($log / 8) + 1;
+    $bits   = (int) $log + 1;
+    $filter = (int) (1 << $bits) - 1;
+    do {
+      $rnd = hexdec(bin2hex(openssl_random_pseudo_bytes($bytes)));
+      $rnd = $rnd & $filter;
+    } while ($rnd >= $range);
+
+    return $min + $rnd;
   }
 
   /**
@@ -101,6 +64,19 @@ class ditto {
     echo "<pre style='text-align:left;font-size:14px'>";
     var_dump($what);
     echo "</pre></div></div>";
+  }
+
+  /**
+   * Function to require a login
+   * @return bool|string
+   */
+  public static function requireLogin () {
+    #If a user is not logged in, move them
+    if (strlen($user = self::checkSession()) != 36) {
+      self::redirect("/?loginrequired");
+    }
+
+    return $user;
   }
 
   /**
@@ -143,16 +119,21 @@ class ditto {
   }
 
   /**
-   * Function to require a login
-   * @return bool|string
+   * Function to redirect the user
+   *
+   * @param $url
+   *
+   * @return bool
    */
-  public static function requireLogin () {
-    #If a user is not logged in, move them
-    if (strlen($user = self::checkSession()) != 36) {
-      self::redirect("/?loginrequired");
-    }
+  public static function redirect ($url) {
+    if (!headers_sent()) {
+      header("HTTP/1.1 301 Moved Permanently");
+      header("Location: $url");
 
-    return $user;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   /**
@@ -244,6 +225,25 @@ class ditto {
     $inserted = $insert->rowCount();
 
     return $inserted !== 1 ? false : true;
+  }
+
+  /**
+   * Function to create a uuid v4
+   *
+   * @return string
+   */
+  static function uuid () {
+    return sprintf(
+      '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+      mt_rand(0, 0xffff),
+      mt_rand(0, 0xffff),
+      mt_rand(0, 0xffff),
+      mt_rand(0, 0x0fff) | 0x4000,
+      mt_rand(0, 0x3fff) | 0x8000,
+      mt_rand(0, 0xffff),
+      mt_rand(0, 0xffff),
+      mt_rand(0, 0xffff)
+    );
   }
 
   /**

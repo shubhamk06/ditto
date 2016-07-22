@@ -4,8 +4,8 @@
     <data-source name="MySQL - ditto@localhost" uuid="57ffa0d3-45f9-4948-97b7-f8bebeda498a">
       <secret-storage>master_key</secret-storage>
       <user-name>morgenstern</user-name>
-      <schema-pattern>ditto.*</schema-pattern>
-      <default-schemas>ditto.*</default-schemas>
+      <introspection-scope>ditto:*</introspection-scope>
+      <resolve-scope>ditto:*</resolve-scope>
       <ssh-properties>
         <enabled>true</enabled>
         <proxy-host>104.236.85.60</proxy-host>
