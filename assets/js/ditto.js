@@ -48,11 +48,12 @@ ditto = {
     //Function to calculate the PHQ-9 Index
     "depressionIndex"      : function () {
       console.log("ditto.calculate.depressionIndex()");
+
       var answers = ditto.phq9Answers;
 
       //Remove summative question
-      if (answers.length === 11) {
-        delete answers[10];
+      if (answers.length === 10) {
+        delete answers[9];
       }
 
       var index = 0;
@@ -91,7 +92,7 @@ ditto = {
       }
 
       //Depression can also be ruled out if depressive feelings are not reported
-      if (answers[1] < 2 && answers[2] < 2 && index < 5) {
+      if (answers[0] < 2 && answers[1] < 2 && index < 5) {
         ditto.depressed = false;
         ditto.diagnosis =
           "Not depressed (" + "Not self-reporting depression" + ")";

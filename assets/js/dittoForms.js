@@ -83,7 +83,7 @@ dittoForms = {
 
   "function": { //Methods for providing functionality to the form
     //For getting responses
-    "management": function (question, answer, answerElement) {
+    "management" : function (question, answer, answerElement) {
       console.log("dittoForms.function.management()");
 
       if (dittoForms.responses == null) {
@@ -93,11 +93,11 @@ dittoForms = {
 
       //Final question
       if (Object.keys(dittoForms.responses).length
-          == dittoForms.questionCount) {
-        console.log("last question answered");
-
+          >= dittoForms.questionCount) {
         //If there's a concluding question
-        if (dittoForms.questions.length > dittoForms.questionCount) {
+        if (dittoForms.questions.length > dittoForms.questionCount && $(
+            "#questions .ribbon"
+          ).length == dittoForms.questionCount) {
           var callback = function () {
             $("html, body").animate(
               {
@@ -112,7 +112,7 @@ dittoForms = {
             dittoForms.questions[dittoForms.questionCount], callback
           );
         } else { //Compute Results
-
+          dittoForms.function.call();
         }
       } else { //More questions - continue to next
         $("html, body").animate(
@@ -123,7 +123,31 @@ dittoForms = {
       }
 
       return false;
-    }, "call"   : {}, "callback": {}
+    }, "call"    : function () {
+      ditto.phq9Answers = $.map(
+        dittoForms.responses, function (value) {
+          return [parseInt(value)];
+        }
+      );
+      ditto.calculate.depressionIndex();
+      ditto.calculate.diagnosis();
+
+      var resultsDiv = $(".ribbon[id$='r']");
+      resultsDiv.find("#tagline").text(ditto.diagnosis.split("(")[0]);
+      resultsDiv.find("#content").text(ditto.treatment);
+
+      $("html, body").animate(
+        {
+          scrollTop: resultsDiv.offset().top
+        }, 700
+      );
+
+      ditto.report.mood(
+        function (res) {
+          console.info(res);
+        }
+      );
+    }, "callback": {}
   },
 
   "create": {
@@ -298,17 +322,23 @@ dittoForms = {
       } else {
         question.answers.forEach(
           function (e) {
+            var nextQuestion = question.order + 1;
+            if (question.order == "f") {
+              nextQuestion = "r";
+            }
             answers +=
               "<a class='button fixed answer' href='#"
               + question.qualifier.substring(0, question.qualifier.length - 1)
-              + (
-              question.order + 1
-              )
+              + nextQuestion
               + "' data-question='"
               + question.id
               + "' data-answer='"
               + e.value
-              + "'>"
+              + "' onClick='return dittoForms.function.management(\""
+              + question.order
+              + "\", \""
+              + e.value
+              + "\", $(this))'>"
               + e.label
               + "</a> ";
           }
@@ -337,7 +367,11 @@ dittoForms = {
       );
 
       dittoForms.console.log();
-      callback();
+
+      if (callback !== null && typeof callback == "function") {
+        callback();
+      }
+
       return true;
     }
   }

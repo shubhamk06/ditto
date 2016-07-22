@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87404aab-d3ce-4263-ac0a-6e864b08b95e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about/legal/terms/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Pwnjo.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Pwnjo.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/index.php" afterPath="$PROJECT_DIR$/about/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/ditto.js" afterPath="$PROJECT_DIR$/assets/js/ditto.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/dittoForms.js" afterPath="$PROJECT_DIR$/assets/js/dittoForms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/json/forms/phq9.json" afterPath="$PROJECT_DIR$/assets/json/forms/phq9.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/php/ditto.php" afterPath="$PROJECT_DIR$/assets/php/ditto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/php/footer.php" afterPath="$PROJECT_DIR$/assets/php/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dash/index.php" afterPath="$PROJECT_DIR$/dash/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enter/mood.php" afterPath="$PROJECT_DIR$/enter/mood.php" />
     </list>
     <ignored path="ditto.iws" />
@@ -73,22 +62,22 @@
       <file leaf-file-name="ditto.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/ditto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+            <state relative-caret-position="459">
+              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dittoForms.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dittoForms.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/dittoForms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+            <state relative-caret-position="544">
+              <caret line="140" column="44" selection-start-line="140" selection-start-column="44" selection-end-line="140" selection-end-column="44" />
               <folding>
-                <marker date="1469216408275" expanded="true" signature="7036:7097" ph="..." />
-                <marker date="1469216408275" expanded="true" signature="7587:7600" ph="..." />
-                <marker date="1469216408275" expanded="true" signature="7729:7774" ph="..." />
+                <marker date="1469222183842" expanded="true" signature="7728:7789" ph="..." />
+                <marker date="1469222183842" expanded="true" signature="8279:8292" ph="..." />
+                <marker date="1469222183842" expanded="true" signature="8421:8466" ph="..." />
               </folding>
             </state>
           </provider>
@@ -104,25 +93,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mood.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mood.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/enter/mood.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-              <folding>
-                <marker date="1469214982398" expanded="true" signature="2260:3476" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="2300:3453" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="2337:2394" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="2523:2722" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="2822:2909" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="2985:3077" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="3173:3261" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="3337:3430" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="3633:4016" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="3673:3993" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="3710:3756" ph="..." />
-                <marker date="1469214982398" expanded="true" signature="3917:3969" ph="..." />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -159,7 +135,6 @@
         <option value="$PROJECT_DIR$/enter/food.php" />
         <option value="$PROJECT_DIR$/assets/json/forms/hei2010.json" />
         <option value="$PROJECT_DIR$/assets/json/forms/formsSchema.json" />
-        <option value="$PROJECT_DIR$/assets/js/ditto.js" />
         <option value="$PROJECT_DIR$/assets/php/header.php" />
         <option value="$PROJECT_DIR$/assets/php/ditto.php" />
         <option value="$PROJECT_DIR$/about/legal/terms/index.php" />
@@ -171,8 +146,9 @@
         <option value="$PROJECT_DIR$/about/index.php" />
         <option value="$PROJECT_DIR$/assets/json/forms/phq9.json" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/enter/mood.php" />
         <option value="$PROJECT_DIR$/assets/js/dittoForms.js" />
+        <option value="$PROJECT_DIR$/assets/js/ditto.js" />
+        <option value="$PROJECT_DIR$/enter/mood.php" />
       </list>
     </option>
   </component>
@@ -372,7 +348,7 @@
       <workItem from="1469127380521" duration="1125000" />
       <workItem from="1469129393673" duration="86000" />
       <workItem from="1469209999989" duration="476000" />
-      <workItem from="1469210612164" duration="5646000" />
+      <workItem from="1469210612164" duration="9539000" />
     </task>
     <task id="LOCAL-00001" summary="Improved, random">
       <created>1457325150168</created>
@@ -507,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462795782730</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Generates final question, dittoForms.js controls responses">
+      <created>1469216550112</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1469216550112</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers>
       <GitHub shared="false" url="https://github.com">
         <option name="assignedIssuesOnly" value="false" />
@@ -528,7 +511,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64025000" />
+    <option name="totallyTimeSpent" value="67918000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -837,11 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/database.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/jquery-2.2.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -913,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/php/ditto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -978,31 +949,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/enter/mood.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding>
-            <marker date="1469214982398" expanded="true" signature="2260:3476" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="2300:3453" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="2337:2394" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="2523:2722" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="2822:2909" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="2985:3077" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="3173:3261" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="3337:3430" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="3633:4016" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="3673:3993" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="3710:3756" ph="..." />
-            <marker date="1469214982398" expanded="true" signature="3917:3969" ph="..." />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/assets/database.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/ditto.js">
+    <entry file="file://$PROJECT_DIR$/assets/database.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+        <state relative-caret-position="459">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1025,13 +980,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/dittoForms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+        <state relative-caret-position="544">
+          <caret line="140" column="44" selection-start-line="140" selection-start-column="44" selection-end-line="140" selection-end-column="44" />
           <folding>
-            <marker date="1469216408275" expanded="true" signature="7036:7097" ph="..." />
-            <marker date="1469216408275" expanded="true" signature="7587:7600" ph="..." />
-            <marker date="1469216408275" expanded="true" signature="7729:7774" ph="..." />
+            <marker date="1469222183842" expanded="true" signature="7728:7789" ph="..." />
+            <marker date="1469222183842" expanded="true" signature="8279:8292" ph="..." />
+            <marker date="1469222183842" expanded="true" signature="8421:8466" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/ditto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/enter/mood.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
