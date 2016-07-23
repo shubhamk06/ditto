@@ -66,7 +66,7 @@ dittoForms = {
 
       dittoForms.console.log();
     }, //Function to verify that the form provided was correct
-    "verify": function (callback) {
+    "verify": function () {
       console.log("dittoForms.setup.verify()");
 
       $.getJSON(
@@ -74,7 +74,7 @@ dittoForms = {
       ).then(
         function (json) {
           dittoForms.setup.fillIn(json);
-          dittoForms.create.formActual(callback);
+          dittoForms.create.formActual();
           dittoForms.console.log();
         }
       );
@@ -124,12 +124,25 @@ dittoForms = {
 
       return false;
     }, "call"    : function () {
-      ditto.phq9Answers = $.map(
+      ditto[dittoForms.formID + "Answers"] = $.map(
         dittoForms.responses, function (value) {
           return [parseInt(value)];
         }
       );
-      ditto.calculate.depressionIndex();
+
+      //Modified from http://stackoverflow.com/a/4351575/1843510
+      function executeFunctionByName(functionName, context) {
+        var namespaces = functionName.split(".");
+        var func       = namespaces.pop();
+        namespaces.shift();
+        for (var i = 0; i < namespaces.length; i++) {
+          context = context[namespaces[i]];
+        }
+        return context[func].apply(context);
+      }
+
+      executeFunctionByName(dittoForms.meta.callback, ditto);
+
       ditto.calculate.diagnosis();
 
       var resultsDiv = $(".ribbon[id$='r']");
@@ -153,11 +166,6 @@ dittoForms = {
   "create": {
     //For creating question titles; numbers to words
     "questionTitle": function (number) {
-      //From http://stackoverflow.com/a/1026087/1843510
-      String.prototype.ucFirst = function () {
-        return this.charAt(0).toUpperCase() + this.slice(1);
-      }
-
       //number to string, pluginized from
       //http://stackoverflow.com/questions/5529934/javascript-numbers-to-words
 
@@ -292,7 +300,7 @@ dittoForms = {
         callback();
       }
     }, //Form answer button(s) HTML
-    "answers"      : function (question) {
+    "answers"   : function (question) {
       console.log("dittoForms.create.answers()");
 
       var answers = "";
@@ -347,16 +355,62 @@ dittoForms = {
 
       return answers;
     }, //Constructor
-    "form"         : function (formID, callback) {
+    "form"      : function (formID) {
       console.log("dittoForms.create.form()");
 
       dittoForms.formID = formID;
-      dittoForms.setup.verify(callback);
+      dittoForms.setup.verify();
 
       dittoForms.console.log();
     }, //Create form once questions are loaded
-    "formActual"   : function (callback) {
+    "formActual": function () {
       console.log("dittoForms.create.formActual()");
+
+      //From http://stackoverflow.com/a/1026087/1843510
+      String.prototype.ucFirst = function () {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+      }
+
+      //Create form info header
+      $("script[data-tag='dF']").after(
+        "<div class='ribbon' id='log'><div" + " class='container'></div></div>"
+      );
+      $("#log .container").append(
+        "<h1 class='bigbold'>Log "
+        + dittoForms.meta.for.ucFirst()
+        + "</h1><br><br>"
+      );
+      $("#log .container").append(dittoForms.meta.about);
+      var firstQuestion = dittoForms.questions[0].id;
+      $("#log .container").append(
+        "<br><br>"
+        + "<a class=\"button\""
+        + " onClick=\"$('html,body').animate"
+        + "({scrollTop: $('#"
+        + firstQuestion
+        + "').offset().top}, 700);return"
+        + " false;\">Get Started</a>"
+      );
+
+      //Allow questions to be added
+      $("#log").after("<div id='questions'></div>");
+
+      //Add results container
+      $("#questions").after(
+        "<div class='ribbon' id='"
+        + dittoForms.formID
+        + "r'><div"
+        + " class='container'></div></div>"
+      );
+      $("#" + dittoForms.formID + "r .container").append(
+        "<h1 class='bigbold'>Results</h1>"
+      );
+      $("#" + dittoForms.formID + "r .container").append(
+        "<h1 id='tagline'></h1>"
+        + "<span id='content'></span>"
+        + "<br><br>"
+        + "<a class='button' href='/dash/'>Return to Dash</a>"
+      );
 
       dittoForms.questions.forEach(
         function (question) {
@@ -367,10 +421,6 @@ dittoForms = {
       );
 
       dittoForms.console.log();
-
-      if (callback !== null && typeof callback == "function") {
-        callback();
-      }
 
       return true;
     }
