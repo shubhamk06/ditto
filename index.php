@@ -1,5 +1,5 @@
 <?php
-require("assets/php/header.php");
+#require("assets/php/header.php");
 ?>
 
 <div class="ribbon">
