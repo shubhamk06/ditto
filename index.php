@@ -14,5 +14,5 @@
 </div>
 
 <?php
-require("assets/php/footer.php");
+#require("assets/php/footer.php");
 ?>
