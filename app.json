@@ -1,0 +1,33 @@
+{
+  "name": "ditto",
+  "description": "Test app for pull requests to alpha (any commit outside of the ditto team)",
+  "scripts": {
+  },
+  "env": {
+    "db-base": {
+      "required": true
+    },
+    "db-host": {
+      "required": true
+    },
+    "db-pass": {
+      "required": true
+    },
+    "db-user": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
