@@ -40,7 +40,7 @@ $dataPointsPerm = [
         <a class="button" href="/enter/mood/">Log Mood</a>
       <?php else: ?>
         <?php if (count($sleepPoints) == 0): ?>
-          <a class="button" href="/enter/sleep/">Log Sleep</a>
+              <a class="button" href="/enter/csdc/">Log Sleep</a>
         <?php endif; ?>
         <?php if (count($foodPoints) == 0): ?>
           <a class="button" href="/enter/food/">Log Food</a>

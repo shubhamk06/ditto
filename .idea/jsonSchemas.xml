@@ -15,7 +15,7 @@
                   </Item>
                 </list>
               </option>
-              <option name="relativePathToSchema" value="assets\json\forms\formsSchema.json" />
+              <option name="relativePathToSchema" value="assets/json/forms/formsSchema.json" />
             </SchemaInfo>
           </value>
         </entry>

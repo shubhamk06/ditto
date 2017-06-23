@@ -1,0 +1,110 @@
+{
+  "form": {
+    "name": {
+      "short": "csd-c",
+      "long": "consensus sleep diary core"
+    },
+    "capitalName": {
+      "short": "CSD-C",
+      "long": "Consensus Sleep Diary Core"
+    },
+    "information": {
+      "url": "http://l.zbee.me/2sBl97M",
+      "form": "http://l.zbee.me/2sQS0Y7"
+    },
+    "for": "sleep",
+    "questions": 9,
+    "indexRange": [1, 2],
+    "about": "From here you can log how you slept, using a modified CSD-C diary entry.<br>Monitoring your sleep is very important for identifying correlations between it and your mood, which it can play a huge part it - particularly your energy level.<br><br>Ready to begin monitoring your sleep?",
+    "callback": "ditto.calculate.sleep"
+  },
+  "questions": [
+    {
+      "order": 1,
+      "id": "csdc1",
+      "qualifier": "inBed",
+      "question": "What time did you get into bed?",
+      "answers:": "time"
+    },
+    {
+      "order": 2,
+      "id": "csdc2",
+      "qualifier": "sleepTime",
+      "question": "What time did you try to go to sleep?",
+      "answers": "time"
+    },
+    {
+      "order": 3,
+      "id": "csdc3",
+      "qualifier": "sleepDeferred",
+      "question": "How long did it take you to fall asleep?",
+      "answers": "timeNum"
+    },
+    {
+      "order": 4,
+      "id": "csdc4",
+      "qualifier": "timesWake",
+      "question": "How many times did you wake up (and then went back to sleep)?",
+      "answers": {
+        "from": 0,
+        "to": 20
+      }
+    },
+    {
+      "order": 5,
+      "id": "csdc5",
+      "qualifier": "wakeLength",
+      "question": "How long in total were these awakenings?",
+      "answers": "timeNum"
+    },
+    {
+      "order": 6,
+      "id": "csdc6",
+      "qualifier": "wake",
+      "question": "What time did you wake up?",
+      "answers": "time"
+    },
+    {
+      "order": 7,
+      "id": "csdc7",
+      "qualifier": "outBed",
+      "question": "What time did you get out of bed after waking up?",
+      "answers": "time"
+    },
+    {
+      "order": 8,
+      "id": "csdc8",
+      "qualifier": "quality",
+      "question": "How would you rate the quality of your sleep?",
+      "answers": [
+        {
+          "label": "Very Poor",
+          "value": 0
+        },
+        {
+          "label": "Poor",
+          "value": 1
+        },
+        {
+          "label": "Fair",
+          "value": 2
+        },
+        {
+          "label": "Good",
+          "value": 3
+        },
+        {
+          "label": "Very Good",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "id": "csdc9",
+      "qualifier": "comment",
+      "question": "Any comments? ('I have a cold')",
+      "answers": "text"
+    }
+  ]
+}

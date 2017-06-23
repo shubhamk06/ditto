@@ -1,0 +1,40 @@
+{
+  "form": {
+    "name": {
+      "short": "csd-m",
+      "long": "consensus sleep diary morning"
+    },
+    "capitalName": {
+      "short": "CSD-M",
+      "long": "Consensus Sleep Diary Morning"
+    },
+    "information": {
+      "url": "http://l.zbee.me/2sBl97M",
+      "form": "http://l.zbee.me/2sqlwTY"
+    },
+    "for": "sleep-m",
+    "questions": 22,
+    "indexRange": [1, 2],
+    "about": "From here you can log ",
+    "questionPreface": "How're you ... ",
+    "callback": "ditto.calculate.<thisIndex>"
+  },
+  "questions": [
+    {
+      "order": 1,
+      "id": "1",
+      "qualifier": "1",
+      "question": "Doing today?"
+    }
+  ],
+  "answers": [
+    {
+      "label": "No",
+      "value": 0
+    },
+    {
+      "label": "Yes",
+      "value": 1
+    }
+  ]
+}

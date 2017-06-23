@@ -74,7 +74,7 @@
         },
         "questionPreface": {
           "description": "Preface information for each question.",
-          "type": "string"
+          "type": ["string", "null"]
         },
         "callback": {
           "description": "ditto.js function to call after completing form questions.",
@@ -114,13 +114,13 @@
           },
           "answers": {
             "description": "Question-specific labels and values for the answer buttons.",
-            "type": ["array", "null"],
+            "type": ["array", "object", "string", "null"],
             "items": {
               "type": "object",
               "properties": {
                 "label": {
                   "description": "The label for the button.",
-                  "type": "string"
+                  "type": ["string"]
                 },
                 "value": {
                   "description": "The value for the button.",
