@@ -2,10 +2,16 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="MySQL - ditto@localhost" uuid="57ffa0d3-45f9-4948-97b7-f8bebeda498a">
+      <database-info product="MySQL" version="5.5.47-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>morgenstern</user-name>
-      <introspection-scope>ditto:*</introspection-scope>
-      <resolve-scope>ditto:*</resolve-scope>
+      <introspection-schemas>*:ditto</introspection-schemas>
+      <resolve-scope>*:ditto</resolve-scope>
+      <unqualified-resolve-schemas>*:ditto</unqualified-resolve-schemas>
       <ssh-properties>
         <enabled>true</enabled>
         <proxy-host>104.236.85.60</proxy-host>

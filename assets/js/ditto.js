@@ -6,8 +6,9 @@
 //sleepQuality                 | integer | quality of sleep
 //healthyEatingIndex           | integer | total of HEI-2010 questions
 //phq9Answers                  | array   | the answers self-reported by human
-//hei2010Answers               | array   | the answers self-reported by human
 //sleepAnswers                 | array   | the answers self-reported by human
+//csdcAnswers                  | array   | the answers self-reported by human
+//hei2010Answers               | array   | the answers self-reported by human
 //depressed                    | boolean | if the human is depressed
 //diagnosis                    | string  | the complete diagnosis of human
 //treatment                    | string  | Pfizer's suggest treatment
@@ -30,7 +31,7 @@ ditto = {
   "sleepQuality"      : null,
   "healthyEatingIndex": null,
   "phq9Answers"       : null,
-  "sleepAnswers"      : null,
+  "sleepAnswers"      : null, "csdcAnswers": null,
   "hei2010Answers"    : null,
   "depressed"         : null,
   "diagnosis"         : null,
@@ -46,7 +47,7 @@ ditto = {
   }, //Methods for calculating results
   "calculate": {
     //Function to calculate the PHQ-9 Index
-    "depressionIndex"      : function () {
+    "depressionIndex": function () {
       console.log("ditto.calculate.depressionIndex()");
 
       var answers = ditto.phq9Answers;
@@ -59,11 +60,9 @@ ditto = {
       var index = 0;
 
       //Add answers together
-      answers.forEach(
-        function (answer) {
-          index += answer;
-        }
-      );
+      answers.forEach(function (answer) {
+        index += answer;
+      });
 
       //Return depressionIndex
       ditto.depressionIndex = index;
@@ -71,7 +70,7 @@ ditto = {
       return index;
     }, //Function to diagnose based off of Pfizer's PHQ-9 stable resource
        // toolkit
-    "diagnosis"            : function () {
+    "diagnosis"      : function () {
       console.log("ditto.calculate.diagnosis()");
       var answers = ditto.phq9Answers;
 
@@ -152,7 +151,22 @@ ditto = {
 
       //Return diagnosis
       return exit();
-    }, "sleepQuality"      : function () {
+    }, "sleep"       : function () {
+      console.log("ditto.calculate.sleep()");
+
+      //http://www.aasmnet.org/jcsm/ViewAbstract.aspx?pid=30464
+      //Sleep efficiency terms
+      //SOL    > Time between getting in bed and falling asleep
+      //TST    > Total Sleep Time
+      //TIB    > Time in bed
+      //WASO   > Time Awake throughout the night
+      //TASAFA > Time attempting to go to sleep after final wake
+      //DSE    > SOL + TST + WASO + TASAFA * 100
+      //SE     > Sleep efficiency
+      //SE=TIB > TST / TIB
+      //SE=DSE > TST / DSE
+
+    }, "sleepQuality": function () {
       console.log("ditto.calculate.sleepQuality()");
       var quality = 0;
 
