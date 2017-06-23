@@ -6,7 +6,8 @@ error_reporting(E_ALL);
 #Connect to MySQL
 try {
   $db = new PDO(
-    "mysql:host=" . getenv("db-host") . ";dbname=" . getenv("db-base") . ";charset=utf8",
+    "mysql:host=" . getenv("db-host") . ";dbname="
+    . getenv("db-base") . ";charset=utf8",
     getenv("db-user"),
     getenv("db-pass")
   );
@@ -20,5 +21,5 @@ try {
   require_once(__DIR__ . "/ditto.php");
   $ditto = new ditto;
 } catch (Exception $e) {
-  die("Ditto exception<br>" . $e);
+  die("Ditto exception<br>$e");
 }

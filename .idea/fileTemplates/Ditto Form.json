@@ -1,0 +1,40 @@
+{
+  "form": {
+    "name": {
+      "short": "<abbreviation>",
+      "long": "<full name>"
+    },
+    "capitalName": {
+      "short": "<capital abbreviation>",
+      "long": "<uppercase full name>"
+    },
+    "information": {
+      "url": "http://<link to page about form>",
+      "form": "<link to form>.pdf"
+    },
+    "for": "how",
+    "questions": 10,
+    "indexRange": [1, 2],
+    "about": "Tell us how you are doing today!",
+    "questionPreface": "How're you ... ",
+    "callback": "ditto.calculate.<thisIndex>"
+  },
+  "questions": [
+    {
+      "order": 1,
+      "id": "1",
+      "qualifier": "1",
+      "question": "Doing today?"
+    }
+  ],
+  "answers": [
+    {
+      "label": "No",
+      "value": 0
+    },
+    {
+      "label": "Yes",
+      "value": 1
+    }
+  ]
+}
