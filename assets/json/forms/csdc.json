@@ -12,7 +12,7 @@
       "url": "http://l.zbee.me/2sBl97M",
       "form": "http://l.zbee.me/2sQS0Y7"
     },
-    "for": "sleep",
+    "for": "csdc",
     "questions": 9,
     "indexRange": [1, 2],
     "about": "From here you can log how you slept, using a modified CSD-C diary entry.<br>Monitoring your sleep is very important for identifying correlations between it and your mood, which it can play a huge part it - particularly your energy level.<br><br>Ready to begin monitoring your sleep?",
