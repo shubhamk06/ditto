@@ -9,10 +9,14 @@ $exception = false;
 if (ditto::checkSession(true) === true) ditto::redirect("/dash/");
 
 If (array_key_exists("email", $_POST)) {
+  var_dump($_POST);
+
   #Check if email is present
   $check = $db->prepare("SELECT * FROM users WHERE email=?");
   $check->execute([$_POST["email"]]);
   $check = $check->fetchAll(PDO::FETCH_ASSOC);
+
+  var_dump($check);
 
   try {
     #User needs to be created
